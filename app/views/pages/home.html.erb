@@ -35,17 +35,11 @@
       <h1> Featured artists </h1>
       <h3> want more creators ? sign up now !</h3>
       <div class="grid">
-        <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://s3.amazonaws.com/heights-photos/wp-content/uploads/2020/09/27162834/jojinectar.jpg)">
-            Joji
-        </div>
-
-        <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i0.wp.com/findyoursounds.com/wp-content/uploads/2022/07/James-Marriott-Grapes-e1657641830610.jpg?fit=1001%2C1035&ssl=1)">
-            James Marriott
-        </div>
-
-        <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2022-01/lin-manuel-miranda-today-jm-inline-220129-3a4ae4.jpg)">
-            Lin Manuel Miranda
-        </div>
+        <% @users.each do |user| %>
+          <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
+            <%= user.username %>
+          </div>
+        <% end %>
       </div>
 
     </div>
