@@ -1,0 +1,37 @@
+<div id="sidebar">
+  <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <%= link_to root_path, class:"nav-link dashboard" do   %>
+              <i class="fa-solid fa-house-user"></i>
+              Home
+          <% end %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to root_path, class:"nav-link dashboard" do   %>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Search
+          <% end %>
+        </li>
+
+      <ul>
+
+    </div>
+    <div class="offcanvas-body">
+      <h2>
+        <i class="fa-regular fa-bookmark"></i>
+        Library
+      </h2>
+        <hr>
+
+      <div class="empty-state">
+        <i class="fa-solid fa-compact-disc icon"></i>
+        <p>  Start by creating your Playlists </p>
+
+        <%= link_to "Create a playlist", "#", class: "side-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
