@@ -1,0 +1,48 @@
+.sign-up{
+  .header{
+    text-align: center;
+    margin-top: 25px;
+    h1{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px;
+    color: white;
+    }
+  }
+
+  .body{
+    margin: 0px 100px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 11px ;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+
+    .form-inputs{
+      padding: 14px;
+      margin: 14px 0px;
+    }
+    .form-text{
+      color: white;
+      opacity: .7;
+    }
+    .form-actions{
+      text-align: center;
+      .btn-signup{
+        font-size: 35px;
+        color: white;
+        border: 1px white solid;
+        border-radius: 25px;
+        padding: 5px 20px;
+        &:hover {
+          color:black;
+          border-color: transparent;
+          background-color: 	#1DB954;
+        }
+      }
+    }
+    a{
+      color: #1DB954;
+    }
+  }
+}
