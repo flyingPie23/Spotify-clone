@@ -4,29 +4,11 @@
       <h1> Featured songs </h1>
       <h3> want more sounds ? sign up now !</h3>
       <div class="grid">
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://readdork.com/wp-content/uploads/2023/05/230327_Lovejoy_SLB_654.jpg.webp)">
-          Portrait of a Blank slate
-        </div>
-
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.squarespace-cdn.com/content/v1/559cf25ae4b051cc74e761ef/1523433661928-SN3BTWT4SSTSNJVXQGZC/queen_primary.jpg?format=1500w)">
-          Bohemian Rhapsody
-        </div>
-
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://factmag-images.s3.amazonaws.com/wp-content/uploads/2017/04/1491915248_a256d15d921244757268e797ea1320d1-616x440-111.jpg)">
-          Humble
-        </div>
-
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/en/b/b0/Joji_-_Gimme_Love.png)">
-          Gimme love
-        </div>
-
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.genius.com/d946791f82339bdab1424d4678a926f0.1000x1000x1.jpg)">
-          Falling Up
-        </div>
-
-        <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.genius.com/c260fd115ab36d1dd83a6c8a57139e3a.1000x1000x1.png)">
-          So Long
-        </div>
+        <% @songs.each do |song| %>
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= song.cover %>)">
+            <%= song.title %>
+          </div>
+        <% end %>
 
       </div>
     </div>

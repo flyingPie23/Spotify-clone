@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @users = User.all.sample(3)
+    @songs = Song.all.sample(6)
   end
 end
