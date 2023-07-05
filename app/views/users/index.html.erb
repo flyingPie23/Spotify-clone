@@ -1,0 +1,69 @@
+<div id="users">
+  <div class="container">
+    <div class="header">
+      <h1> Find playlists featuring your favorite artists </h1>
+
+      <div class="grid">
+        <div class="card-playlist">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
+          <div class="card-playlist-infos">
+            <h2>SMITHEREENS</h2>
+            <p>Made and Published by <strong>Joji</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card-playlist">
+          <img src="https://i.scdn.co/image/ab67616d0000b2736fbac72609eca05f5d300c9f" />
+          <div class="card-playlist-infos">
+            <h2>Wake up & its Over</h2>
+            <p>Made and Published by <strong>LoveJoy</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card-playlist">
+          <img src="https://media.mmorpg.com/images/heroes/news/52723.jpg"/>
+          <div class="card-playlist-infos">
+            <h2>Radical Summer</h2>
+            <p>Made and Published by <strong>Monster Cat</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card-playlist">
+          <img src="https://m.media-amazon.com/images/I/71nrh7fjBJL._UF1000,1000_QL80_.jpg" />
+          <div class="card-playlist-infos">
+            <h2>Inside</h2>
+            <p>Made and Published by <strong>Bo Burnham</strong>.</p>
+          </div>
+        </div>
+
+        <div class="card-playlist">
+          <img src="https://mspoweruser.com/wp-content/uploads/2022/02/mca1.jpg" />
+          <div class="card-playlist-infos">
+            <h2>Minecraft soundTrack</h2>
+            <p>Made and Published by <strong>C418</strong></p>
+          </div>
+        </div>
+
+        <div class="card-playlist">
+          <img src="https://i.scdn.co/image/ab67616d0000b273c477f199067849f57f8a1f4e" />
+          <div class="card-playlist-infos">
+            <h2>in case I make it,</h2>
+            <p>Made and Published by <strong>Will Wood</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+    </div>
+
+    <div class="body">
+      <div class="grid">
+          <% @users.each do |user| %>
+            <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
+              <%= user.username %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

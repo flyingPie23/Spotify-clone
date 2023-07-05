@@ -1,0 +1,75 @@
+#users{
+  .header{
+    height: 500px;
+    margin: 25px 15px;
+
+    hr{
+      color: white;
+      margin-top: 35px;
+    }
+
+    h1{
+      font-family: 'Bebas Neue', sans-serif;
+      color: white;
+      font-size: 70px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+    }
+    .card-playlist {
+      overflow: hidden;
+      height: 120px;
+      color: white;
+      background: rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      img {
+        height: 100%;
+        width: 120px;
+        object-fit: cover;
+      }
+      h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 15px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 1.4;
+        opacity: .7;
+        margin-left: 10px;
+        margin-bottom: 0;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .body{
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 16px;
+    }
+
+    .card-artists{
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      width: 250px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+  }
+}
