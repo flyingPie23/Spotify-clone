@@ -239,28 +239,223 @@ user7= User.create(
   pfp: "https://i.scdn.co/image/b040846ceba13c3e9c125d68389491094e7f2982",
   password: "123456"
 )
+  Song.create(
+    title: "Bohemian Rhapsody",
+    cover: "https://ichef.bbci.co.uk/news/976/cpsprodpb/4B19/production/_86352291_bohemianrhapsody.jpg",
+    user: user7
+  )
+  Song.create(
+    title: "We Will Rock You",
+    cover: "https://london-coliseum-live-assets.s3.amazonaws.com/uploads/2022/11/7549_22_WWRY_Coliseum_2000x1000_v2-800x600.jpg",
+    user: user7
+  )
+  Song.create(
+    title: "Dont Stop Me Now",
+    cover: "https://townsquare.media/site/366/files/2019/02/GettyImages-75509449.jpg",
+    user: user7
+  )
+  Song.create(
+    title: "Under Pressure",
+    cover: "https://i.scdn.co/image/ab67616d0000b273d254ca497999ae980a5a38c5",
+    user: user7
+  )
+  Song.create(
+    title: "An Other One Bites The Dust",
+    cover: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Another_one_bites_the_dust.jpg/220px-Another_one_bites_the_dust.jpg",
+    user: user7
+  )
+  Song.create(
+    title: "Killer Queen",
+    cover: "https://upload.wikimedia.org/wikipedia/en/f/f0/Killer_Queen_%28cover_art%29.jpg",
+    user: user7
+  )
 
 
-user9= User.create(
+user8= User.create(
   username: "Lilypichu",
   email: "sophia.carter@gmx.com",
   pfp: "https://i.scdn.co/image/ab6761610000e5eb181a909eb13bbe013eeb7708",
   password: "123456"
 )
+  Song.create(
+    title: "Dreamy Night",
+    cover: "https://i.ytimg.com/vi/DXuNJ267Vss/maxresdefault.jpg",
+    user: user8
+  )
+  Song.create(
+    title: "Last Cup Of Coffee",
+    cover: "https://i.scdn.co/image/ab67616d0000b2735f475a92b764261fb40727ba",
+    user: user8
+  )
+  Song.create(
+    title: "Happy",
+    cover: "https://i.ytimg.com/vi/F_Bj_6idYqc/maxresdefault.jpg",
+    user: user8
+  )
+  Song.create(
+    title: "Disappear",
+    cover: "https://cdns-images.dzcdn.net/images/cover/01af411db01b6b1625395acc459ce8b9/264x264.jpg",
+    user: user8
+  )
+  Song.create(
+    title: "POM POM",
+    cover: "https://images.genius.com/3d19d975962d6fb65a8cc95f9cfec899.1000x1000x1.png",
+    user: user8
+  )
+  Song.create(
+    title: "Sunshine and Butterflies",
+    cover: "https://images.genius.com/bf5132b520fa257368b0112d276d6748.1000x1000x1.png",
+    user: user8
+  )
 
-user10= User.create(
+user9= User.create(
   username: "Max Wassen",
   email: "jennifer.robinson@aol.com",
   pfp: "https://i0.wp.com/www.faetonmusic.com/wp-content/uploads/2019/12/Max-Wassen-artist-faeton-music.jpg?fit=406%2C500&ssl=1",
   password: "123456"
 )
+  Song.create(
+    title: "LoveLove.mp3",
+    cover: "https://i1.sndcdn.com/artworks-QOTirk6Axk3406cE-oWFkzw-t500x500.jpg",
+    user: user9
+  )
+  Song.create(
+    title: "Cubicle",
+    cover: "https://i.ytimg.com/vi/4t8ri6AvS2c/maxresdefault.jpg",
+    user: user9
+  )
+  Song.create(
+    title: "Freak",
+    cover: "https://i.scdn.co/image/ab67616d0000b27377c751940eb1bb44a8599533",
+    user: user9
+  )
+  Song.create(
+    title: "Stylish AF",
+    cover: "https://i.scdn.co/image/ab67616d0000b27377d10833825bff95ae7759c4",
+    user: user9
+  )
+  Song.create(
+    title: "Good Times",
+    cover: "https://i.scdn.co/image/ab67616d0000b27377bec11ddf519e18457ef200",
+    user: user9
+  )
+  Song.create(
+    title: "Bullshit",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736a759a85a94bbf163179c326",
+    user: user9
+  )
 
 
-user11= User.create(
+user10= User.create(
   username: "BEENEE",
   email: "lisa@gmail.com",
   pfp: "https://m.media-amazon.com/images/I/41BfN5s5IgL._SX354_SY354_BL0_QL100__UXNaN_FMjpg_QL85_.jpg",
   password: "123456"
 )
+  Song.create(
+    title: "A little While",
+    cover: "https://images.genius.com/18498a26eb34a944935ae6558a734957.1000x1000x1.png",
+    user: user10
+  )
+  Song.create(
+    title: "Night Guarden",
+    cover: "https://i.ytimg.com/vi/lmFiQp6wbZA/maxresdefault.jpg",
+    user: user10
+  )
+  Song.create(
+    title: "Green Honda",
+    cover: "https://images.genius.com/19dcc89cfd8e453df3210030ccdad5ca.1000x1000x1.png",
+    user: user10
+  )
+  Song.create(
+    title: "Wishfull Thinking",
+    cover: "https://images.genius.com/f625aba314a85baf5f20c020d3ca07c8.1000x1000x1.png",
+    user: user10
+  )
+  Song.create(
+    title: "Evil Spider",
+    cover: "https://pbs.twimg.com/media/EORQ7enWkAYe50v.jpg:large",
+    user: user10
+  )
+  Song.create(
+    title: "Soft Side",
+    cover: "https://images.genius.com/acb26489b3d523eed464b0520f2f0e7a.1000x1000x1.png",
+    user: user10
+  )
+
+user11= User.create(
+  username: "The Weeknd",
+  email: "jennifer@weeknd.com",
+  pfp: "https://readdork.com/wp-content/uploads/2022/01/The-Weeknd-2022.jpg",
+  password: "123456"
+)
+  Song.create(
+    title: "Star Boy",
+    cover: "https://i.pinimg.com/originals/bc/49/fc/bc49fc16bddad7e23cd698af7f5504bf.jpg",
+    user: user11
+  )
+  Song.create(
+    title: "Die for You",
+    cover: "https://upload.wikimedia.org/wikipedia/en/8/81/The_Weeknd_-_Die_for_You.png",
+    user: user11
+  )
+  Song.create(
+    title: "Blinding Lights",
+    cover: "https://upload.wikimedia.org/wikipedia/en/e/e6/The_Weeknd_-_Blinding_Lights.png",
+    user: user11
+  )
+  Song.create(
+    title: "heartless",
+    cover: "https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36",
+    user: user11
+  )
+  Song.create(
+    title: "Save Your Tears",
+    cover: "https://i.ytimg.com/vi/LIIDh-qI9oI/maxresdefault.jpg",
+    user: user11
+  )
+  Song.create(
+    title: "Take My Breath",
+    cover: "https://www.nme.com/wp-content/uploads/2021/08/weeknd-take-my-breath-music-video@2000x1270.jpg",
+    user: user11
+  )
+
+
+user12= User.create(
+  username: "YAOSOBI",
+  email: "lindaa@gmail.com",
+  pfp: "https://www.uniqlo.com/jp/ja/contents/feature/ut-magazine/img/s97/hero.jpg",
+  password: "123456"
+)
+  Song.create(
+    title: "夜に駆ける",
+    cover: "https://i1.sndcdn.com/artworks-YrY4Kxz6gU3ytfIp-bAqfyA-t500x500.jpg",
+    user: user12
+  )
+  Song.create(
+    title: "ハルカ",
+    cover: "https://i1.sndcdn.com/artworks-y1gtYaiy6teGDxmO-tjCSOA-t500x500.jpg",
+    user: user12
+  )
+  Song.create(
+    title: "たぶん",
+    cover: "https://i.ytimg.com/vi/tYP-i_tShDY/maxresdefault.jpg",
+    user: user12
+  )
+  Song.create(
+    title: "怪物",
+    cover: "https://upload.wikimedia.org/wikipedia/zh/2/2a/Kaibutsucoverart.jpg",
+    user: user12
+  )
+  Song.create(
+    title: "あの夢をなぞって",
+    cover: "https://i.scdn.co/image/ab67616d0000b273684d81c9356531f2a456b1c1",
+    user: user12
+  )
+  Song.create(
+    title: "祝福",
+    cover: "https://www.lisani.jp/admin/wp-content/uploads/2022/09/2209251800-yh-005-1000x630.jpg",
+    user: user12
+  )
 
 puts "done"
