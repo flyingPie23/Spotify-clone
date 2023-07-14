@@ -59,9 +59,11 @@
     <div class="body">
       <div class="grid">
           <% @users.each do |user| %>
-            <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
-              <%= user.username %>
-            </div>
+            <%= link_to user_path(user) do %>
+              <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
+                <%= user.username %>
+              </div>
+            <% end %>
           <% end %>
       </div>
     </div>

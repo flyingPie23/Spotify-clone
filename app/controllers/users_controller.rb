@@ -1,17 +1,24 @@
 class UsersController < ApplicationController
   def index
     @songs = Song.all
-    placeholders = []
+    ids = []
 
     @songs.each do |song|
-      placeholders << song.user_id
+      ids << song.user_id
     end
 
-    placeholders = placeholders.uniq
+    ids = ids.uniq
 
     @users = []
-    placeholders.each do |placeholder|
-      @users << User.find(placeholder)
+    ids.each do |id|
+      @users << User.find(id)
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @songs = Song.where(user_id: @user).take(3)
+
+    @sounds = Song.where(user_id: @user)
   end
 end

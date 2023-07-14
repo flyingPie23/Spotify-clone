@@ -1,8 +1,22 @@
 <div id="home">
   <div class="container">
+    <% if user_signed_in? %>
+      <div class="header">
+        <% if Time.now.hour < 12 %>
+          <h1>Good Morning</h1>
+        <% else %>
+          <h1> Good Afternoon </h1>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="section">
-      <h1> Featured songs </h1>
-      <h3> want more sounds ? sign up now !</h3>
+      <h2> Featured songs </h2>
+      <% if user_signed_in? %>
+        <h3> </h3>
+      <% else %>
+        <h3> want more sounds ? sign up now !</h3>
+      <% end %>
       <div class="grid">
         <% @songs.each do |song| %>
           <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= song.cover %>)">
@@ -14,21 +28,31 @@
     </div>
 
     <div class="section">
-      <h1> Featured artists </h1>
-      <h3> want more creators ? sign up now !</h3>
+      <h2> Featured artists </h2>
+      <% if user_signed_in? %>
+        <h3> </h3>
+      <% else %>
+        <h3> want more creators ? sign up now !</h3>
+      <% end %>
       <div class="grid">
         <% @users.each do |user| %>
-          <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
-            <%= user.username %>
-          </div>
+          <%= link_to user_path(user) do %>
+            <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
+              <%= user.username %>
+            </div>
+          <% end %>
         <% end %>
       </div>
 
     </div>
 
     <div class="section">
-      <h1> Featured playlists </h1>
-      <h3> want more selections ? sign up now !</h3>
+      <h2> Featured playlist </h2>
+      <% if user_signed_in? %>
+        <h3> </h3>
+      <% else %>
+        <h3> want more selections ? sign up now !</h3>
+      <% end %>
       <div class="grid">
         <div class="card-playlist">
           <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />

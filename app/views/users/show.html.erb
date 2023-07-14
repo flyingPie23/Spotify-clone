@@ -1,9 +1,19 @@
 <div id="user-show">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
-      <h1> LOVEJOY </h1>
+      <h1> <%= @user.username %> </h1>
+      <%= link_to "Follow", "#", class: "follow-btn" %>
     </div>
   </div>
+
+  <div class="container">
+    <div class="info-card">
+      <img src="<%= @user.pfp %>">
+      <h2> XXX FOLLOWERS </h2>
+    </div>
+  </div>
+
+
 
   <div class="container">
     <div class="row">
@@ -11,43 +21,23 @@
           <h2>Popular Songs:</h2>
 
           <ul>
-            <li>
-              <div class="card-playlist">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
-                <div class="card-playlist-infos">
-                  <h2>SMITHEREENS</h2>
+            <% @songs.each do |song| %>
+              <li>
+                <div class="card-playlist">
+                  <img src= "<%= song.cover %>"/>
+                  <div class="card-playlist-infos">
+                    <h2><%= song.title %></h2>
+                  </div>
                 </div>
-              </div>
-            </li>
-
-              <hr>
-
-            <li>
-              <div class="card-playlist">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
-                <div class="card-playlist-infos">
-                  <h2>SMITHEREENS</h2>
-                </div>
-              </div>
-            </li>
-
-              <hr>
-
-            <li>
-              <div class="card-playlist">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
-                <div class="card-playlist-infos">
-                  <h2>SMITHEREENS</h2>
-                </div>
-              </div>
-            </li>
+              </li>
+                <hr>
+            <% end %>
           </ul>
 
         </div>
 
         <div class="col grids">
           <h2>Popular Playlists:</h2>
-
           <ul>
             <li>
               <div class="card-playlist">
@@ -80,8 +70,23 @@
               </div>
             </li>
           </ul>
-
         </div>
+    </div>
+
+    <div class="header">
+      <h2> Discography: </h2>
+    </div>
+
+    <div class="discography">
+      <div class="body">
+        <div class="grid">
+            <% @sounds.each do |sound| %>
+              <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= sound.cover %>)">
+                <%= sound.title %>
+              </div>
+            <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

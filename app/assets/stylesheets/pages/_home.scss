@@ -5,11 +5,23 @@
     color: white;
   }
 
+  .header{
+    height: 150px;
+    margin: 25px 0px;
+
+    h1{
+      font-family: 'Bebas Neue', sans-serif;
+      color: white;
+      font-size: 90px;
+    }
+
+  }
+
   .section{
     height: 650px;
     margin: 25px 0px;
 
-    h1{
+    h2{
       font-family: 'Bebas Neue', sans-serif;
       color: white;
       font-size: 90px;
@@ -23,6 +35,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 16px;
+
+      a{
+        text-decoration: none;
+      }
     }
 
     .card-songs{
