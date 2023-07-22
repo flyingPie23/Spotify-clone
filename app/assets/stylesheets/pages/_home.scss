@@ -56,9 +56,12 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
     .card-artists{
+
       background-size: cover;
       background-position: center;
+      position: relative;
       height: 450px;
+      margin-bottom: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -68,6 +71,50 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       border-radius: 5px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 0;
+      overflow: hidden;
+
+      .go-corner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        background-color: transparent;
+        border-radius: 0 4px 0 32px;
+      }
+
+      .go-arrow {
+        margin-top: -4px;
+        margin-right: -4px;
+        color: transparent;
+        font-family: courier, sans;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -16px;
+        right: -16px;
+        background: #1DB954;
+        height: 32px;
+        width: 32px;
+        border-radius: 32px;
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:before {
+        transform: scale(50);
+      }
+
+
     }
 
     .card-playlist {
@@ -84,7 +131,7 @@
         object-fit: cover;
       }
       h2 {
-        font-size: 16px;
+        font-size: 27px;
         font-weight: bold;
         margin: 15px;
       }

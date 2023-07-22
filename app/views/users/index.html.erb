@@ -62,7 +62,14 @@
             <%= link_to user_path(user) do %>
               <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
                 <%= user.username %>
+
+                <div class="go-corner" href="#">
+                  <div class="go-arrow">
+                    →
+                  </div>
+                </div>
               </div>
+
             <% end %>
           <% end %>
       </div>

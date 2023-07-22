@@ -1,0 +1,57 @@
+<div id="song_show">
+  <div class="container">
+    <div class="body">
+      <img src="<%= @song.cover %>">
+
+      <h1><%= @song.title %></h1>
+      <p><%= @user.username %></p>
+
+      <div class="player">
+        <audio controls>
+          <source src="http://physical-authority.surge.sh/music/2.mp3">
+        </audio>
+      </div>
+    </div>
+
+      <hr>
+
+    <div class="row">
+        <div class="col grids">
+          <h2>more sounds from <%= @user.username %>:</h2>
+
+          <ul>
+            <% @songs.each do |song| %>
+              <li>
+                <div class="card-playlist">
+                  <img src= "<%= song.cover %>"/>
+                  <div class="card-playlist-infos">
+                    <h2><%= song.title %></h2>
+                  </div>
+                </div>
+              </li>
+                <hr>
+            <% end %>
+          </ul>
+
+        </div>
+
+        <div class="col grids">
+          <h2><%= @user.username %> fans also like:</h2>
+          <ul>
+             <% @users.each do |user| %>
+              <li>
+                <div class="card-playlist">
+                  <img src= "<%= user.pfp %>"/>
+                  <div class="card-playlist-infos">
+                    <h2><%= user.username %></h2>
+                  </div>
+                </div>
+              </li>
+                <hr>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+</div>
