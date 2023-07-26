@@ -49,7 +49,8 @@ user1 = User.create(
     cover: "https://i1.sndcdn.com/artworks-z82gslTy92SxQdTT-A1ogUQ-t500x500.jpg",
     user: user1
   )
-user2= User.create(
+
+user2 = User.create(
   username: "James Marriott",
   email: "sarah.jones@gmail.com",
   pfp: "https://i0.wp.com/findyoursounds.com/wp-content/uploads/2022/07/James-Marriott-Grapes-e1657641830610.jpg?fit=1001%2C1035&ssl=1",
@@ -88,7 +89,7 @@ user2= User.create(
   )
 
 
-user3= User.create(
+user3 = User.create(
   username: "Lin Manuel Miranda",
   email: "mikebrown@hotmail.com",
   pfp: "https://assets.entrepreneur.com/content/3x2/2000/1652302233-GettyImages-1395845200.jpg?format=pjeg&auto=webp&crop=4:3",
@@ -158,7 +159,7 @@ user4= User.create(
     user: user4
   )
 
-user5= User.create(
+user5 = User.create(
   username: "Bo Burnham",
   email: "david.thomas@outlook.com",
   pfp: "https://media.newyorker.com/photos/60c11e82c8eec4d1031d5fe1/1:1/w_1080,h_1080,c_limit/Brody-BoBurnham.jpg",
@@ -196,7 +197,7 @@ user5= User.create(
   )
 
 
-user6= User.create(
+user6 = User.create(
   username: "loveJoy",
   email: "olivia.anderson@mail.com",
   pfp: "https://backend.alterart.pl/media/CACHE/images/images/2022/10-21/lovejoy_slider/0c72eb697ec5b5c2c9473501a72be32c.jpg",
@@ -233,7 +234,7 @@ user6= User.create(
     user: user6
   )
 
-user7= User.create(
+user7 = User.create(
   username: "Queen",
   email: "benjamin.harris@yandex.com",
   pfp: "https://i.scdn.co/image/b040846ceba13c3e9c125d68389491094e7f2982",
@@ -271,7 +272,7 @@ user7= User.create(
   )
 
 
-user8= User.create(
+user8 = User.create(
   username: "Lilypichu",
   email: "sophia.carter@gmx.com",
   pfp: "https://i.scdn.co/image/ab6761610000e5eb181a909eb13bbe013eeb7708",
@@ -308,7 +309,7 @@ user8= User.create(
     user: user8
   )
 
-user9= User.create(
+user9 = User.create(
   username: "Max Wassen",
   email: "jennifer.robinson@aol.com",
   pfp: "https://i0.wp.com/www.faetonmusic.com/wp-content/uploads/2019/12/Max-Wassen-artist-faeton-music.jpg?fit=406%2C500&ssl=1",
@@ -346,7 +347,7 @@ user9= User.create(
   )
 
 
-user10= User.create(
+user10 = User.create(
   username: "BEENEE",
   email: "lisa@gmail.com",
   pfp: "https://m.media-amazon.com/images/I/41BfN5s5IgL._SX354_SY354_BL0_QL100__UXNaN_FMjpg_QL85_.jpg",
@@ -383,7 +384,7 @@ user10= User.create(
     user: user10
   )
 
-user11= User.create(
+user11 = User.create(
   username: "The Weeknd",
   email: "jennifer@weeknd.com",
   pfp: "https://readdork.com/wp-content/uploads/2022/01/The-Weeknd-2022.jpg",
@@ -421,7 +422,7 @@ user11= User.create(
   )
 
 
-user12= User.create(
+user12 = User.create(
   username: "YAOSOBI",
   email: "lindaa@gmail.com",
   pfp: "https://www.uniqlo.com/jp/ja/contents/feature/ut-magazine/img/s97/hero.jpg",
