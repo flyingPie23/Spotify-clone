@@ -54,6 +54,10 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
 
+    a{
+      text-decoration: none;
+    }
+
     ul{
       list-style-type: none;
 
@@ -94,21 +98,21 @@
   }
 
   audio::-webkit-media-controls-mute-button{
-    background-color: white;
+    background-color: #1DB954;
     border-radius: 50%;
   }
 
   audio::-webkit-media-controls-mute-button:hover {
-    background-color: #1DB954;
+    background-color: white;
   }
 
   audio::-webkit-media-controls-play-button {
-    background-color: white;
+    background-color: #1DB954;
     border-radius: 50%;
   }
 
   audio::-webkit-media-controls-play-button:hover {
-    background-color: #1DB954;
+    background-color: white;
   }
 
   audio::-webkit-media-controls-current-time-display {

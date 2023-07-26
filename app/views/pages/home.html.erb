@@ -19,9 +19,11 @@
       <% end %>
       <div class="grid">
         <% @songs.each do |song| %>
-          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= song.cover %>)">
-            <%= song.title %>
-          </div>
+          <%= link_to song_path(song) do %>
+            <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= song.cover %>)">
+              <%= song.title %>
+            </div>
+          <% end %>
         <% end %>
 
       </div>

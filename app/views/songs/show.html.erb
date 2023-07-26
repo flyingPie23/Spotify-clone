@@ -22,12 +22,14 @@
           <ul>
             <% @songs.each do |song| %>
               <li>
-                <div class="card-playlist">
-                  <img src= "<%= song.cover %>"/>
-                  <div class="card-playlist-infos">
-                    <h2><%= song.title %></h2>
+                <%= link_to song_path(song) do %>
+                  <div class="card-playlist">
+                    <img src= "<%= song.cover %>"/>
+                    <div class="card-playlist-infos">
+                      <h2><%= song.title %></h2>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               </li>
                 <hr>
             <% end %>
@@ -40,12 +42,14 @@
           <ul>
              <% @users.each do |user| %>
               <li>
-                <div class="card-playlist">
-                  <img src= "<%= user.pfp %>"/>
-                  <div class="card-playlist-infos">
-                    <h2><%= user.username %></h2>
+                <%= link_to user_path(user) do %>
+                  <div class="card-playlist">
+                    <img src= "<%= user.pfp %>"/>
+                    <div class="card-playlist-infos">
+                      <h2><%= user.username %></h2>
+                    </div>
                   </div>
-                </div>
+                <% end %>
               </li>
                 <hr>
             <% end %>

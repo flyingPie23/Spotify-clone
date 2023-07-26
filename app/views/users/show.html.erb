@@ -22,15 +22,17 @@
 
           <ul>
             <% @songs.each do |song| %>
-              <li>
-                <div class="card-playlist">
-                  <img src= "<%= song.cover %>"/>
-                  <div class="card-playlist-infos">
-                    <h2><%= song.title %></h2>
+              <%= link_to song_path(song) do %>
+                <li>
+                  <div class="card-playlist">
+                    <img src= "<%= song.cover %>"/>
+                    <div class="card-playlist-infos">
+                      <h2><%= song.title %></h2>
+                    </div>
                   </div>
-                </div>
-              </li>
-                <hr>
+                </li>
+                  <hr>
+              <% end %>
             <% end %>
           </ul>
 
@@ -81,9 +83,11 @@
       <div class="body">
         <div class="grid">
             <% @sounds.each do |sound| %>
-              <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= sound.cover %>)">
-                <%= sound.title %>
-              </div>
+              <%= link_to song_path(sound) do %>
+                <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= sound.cover %>)">
+                  <%= sound.title %>
+                </div>
+              <% end %>
             <% end %>
         </div>
       </div>
