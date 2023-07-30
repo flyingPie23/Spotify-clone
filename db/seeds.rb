@@ -110,36 +110,90 @@ user2 = User.create(
   password: "123456"
 )
 
-  Song.create(
-    title: "So Long",
-    cover: "https://images.genius.com/c260fd115ab36d1dd83a6c8a57139e3a.1000x1000x1.png",
-    user: user2
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - So Long (Official Music Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'James Marriott - So Long (Official Music Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Car Light",
-    cover: "https://images.genius.com/3ec1e5cc64dfdd88749714afe524798f.1000x1000x1.png",
-    user: user2
+
+    Song.create(
+      title: "So Long",
+      cover: "https://images.genius.com/c260fd115ab36d1dd83a6c8a57139e3a.1000x1000x1.png",
+      user: user2,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - Car Lights (Official Audio).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'James Marriott - Car Lights (Official Audio).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Grapes",
-    cover: "https://images.genius.com/5c0debf484744cb0af272ac819978764.400x400x1.jpg",
-    user: user2
+
+
+    Song.create(
+      title: "Car Light",
+      cover: "https://images.genius.com/3ec1e5cc64dfdd88749714afe524798f.1000x1000x1.png",
+      user: user2,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - Grapes (Official Music Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'James Marriott - Grapes (Official Music Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Sleeping on Trains",
-    cover: "https://i.scdn.co/image/ab67616d0000b27314370ea5fed4beca8d5c7a35",
-    user: user2
+
+
+    Song.create(
+      title: "Grapes",
+      cover: "https://images.genius.com/5c0debf484744cb0af272ac819978764.400x400x1.jpg",
+      user: user2,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - Sleeping On Trains (Official Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'James Marriott - Sleeping On Trains (Official Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Where Everyone Has Gone ?",
-    cover: "https://i.ytimg.com/vi/o8OUMq37nBI/maxresdefault.jpg",
-    user: user2
+
+
+    Song.create(
+      title: "Sleeping on Trains",
+      cover: "https://i.scdn.co/image/ab67616d0000b27314370ea5fed4beca8d5c7a35",
+      user: user2,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - Where Has Everyone Gone_ (Official Audio).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'James Marriott - Where Has Everyone Gone_ (Official Audio).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Gold",
-    cover: "https://pbs.twimg.com/media/FGNFinUXIAQCt7f?format=jpg&name=large",
-    user: user2
-  )
+    Song.create(
+      title: "Where Everyone Has Gone ?",
+      cover: "https://i.ytimg.com/vi/o8OUMq37nBI/maxresdefault.jpg",
+      user: user2,
+      mp3: audio_file
+    )
+
+    local_audio_path = Rails.root.join('app', 'assets', 'audio', 'James Marriott - Gold (Official Music Video).mp3')
+    audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'James Marriott - Gold (Official Music Video).mp3',
+      content_type: 'audio/mpeg'
+    )
+      Song.create(
+        title: "Gold",
+        cover: "https://pbs.twimg.com/media/FGNFinUXIAQCt7f?format=jpg&name=large",
+        user: user2,
+        mp3: audio_file
+      )
 
 
 user3 = User.create(
