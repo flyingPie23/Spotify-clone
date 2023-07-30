@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 puts "clears database"
 User.destroy_all
@@ -18,37 +19,89 @@ user1 = User.create(
   pfp: "https://s3.amazonaws.com/heights-photos/wp-content/uploads/2020/09/27162834/jojinectar.jpg",
   password: "123456"
 )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - SLOW DANCING IN THE DARK.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'SLOW DANCING IN THE DARK.mp3',
+    content_type: 'audio/mpeg'
+  )
 
-  Song.create(
-    title: "SLOW DANCING IN THE DARK",
-    cover: "https://upload.wikimedia.org/wikipedia/en/0/01/Slow_Dancing_in_the_Dark.jpg",
-    user: user1
+    Song.create(
+      title: "SLOW DANCING IN THE DARK",
+      cover: "https://upload.wikimedia.org/wikipedia/en/0/01/Slow_Dancing_in_the_Dark.jpg",
+      user: user1,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - Gimme Love.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Joji - Gimme Love.mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Gimme Love",
-    cover: "https://i.scdn.co/image/ab67616d0000b2731ac0a83eb2c23b29c480e68a",
-    user: user1
+
+    Song.create(
+      title: "Gimme Love",
+      cover: "https://i.scdn.co/image/ab67616d0000b2731ac0a83eb2c23b29c480e68a",
+      user: user1,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji & Diplo - Daylight (Official Music Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Joji & Diplo - Daylight (Official Music Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "DayLight",
-    cover: "https://i.scdn.co/image/ab67616d0000b2730e991b59cee17246a5e604d0",
-    user: user1
+
+    Song.create(
+      title: "DayLight",
+      cover: "https://i.scdn.co/image/ab67616d0000b2730e991b59cee17246a5e604d0",
+      user: user1,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - Sanctuary (Official Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Joji - Sanctuary (Official Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Sanctuary",
-    cover: "https://upload.wikimedia.org/wikipedia/en/2/2e/Joji_-_Sanctuary.png",
-    user: user1
+
+    Song.create(
+      title: "Sanctuary",
+      cover: "https://upload.wikimedia.org/wikipedia/en/2/2e/Joji_-_Sanctuary.png",
+      user: user1,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - Feeling Like The End.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Joji - Feeling Like The End.mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Feeling Like The End",
-    cover: "https://imgx.sonora.id/crop/0x0:0x0/360x240/photo/2022/11/11/1jpg-20221111075852.jpg",
-    user: user1
+
+    Song.create(
+      title: "Feeling Like The End",
+      cover: "https://imgx.sonora.id/crop/0x0:0x0/360x240/photo/2022/11/11/1jpg-20221111075852.jpg",
+      user: user1,
+      mp3: audio_file
+    )
+
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - Die For You.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Joji - Die For You.mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Die for You",
-    cover: "https://i1.sndcdn.com/artworks-z82gslTy92SxQdTT-A1ogUQ-t500x500.jpg",
-    user: user1
-  )
+
+    Song.create(
+      title: "Die for You",
+      cover: "https://i1.sndcdn.com/artworks-z82gslTy92SxQdTT-A1ogUQ-t500x500.jpg",
+      user: user1,
+      mp3: audio_file
+    )
 
 user2 = User.create(
   username: "James Marriott",
