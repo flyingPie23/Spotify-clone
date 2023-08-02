@@ -23,18 +23,32 @@
       <h2>
         <i class="fa-regular fa-bookmark"></i>
         Library
+
+        <i class="fa-solid fa-plus d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
       </h2>
+
         <hr>
 
-      <div class="empty-state">
-        <i class="fa-solid fa-compact-disc icon"></i>
-        <p>  Start by creating your Playlists </p>
 
-        <button type="button" class="side-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
-        </button>
+      <% if @playlists.empty? %>
+        <div class="empty-state">
+          <i class="fa-solid fa-compact-disc icon"></i>
+          <p>  Start by creating your Playlists </p>
 
-      </div>
+          <button type="button" class="side-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create a Playlist
+          </button>
+        </div>
+      <% else %>
+        <div class="playlists">
+          <ul>
+            <% @playlists.each do |playlist| %>
+              <li> <%= playlist.name %>  </li>
+            <% end %>
+          </ul>
+
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

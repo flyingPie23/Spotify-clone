@@ -1,0 +1,47 @@
+#playlist_new{
+  .modal-content{
+    background-color: #121212;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 7px;
+  }
+
+  .modal-header{
+    h1{
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+  }
+
+  .modal-body{
+    .form-label{
+      color: white;
+    }
+  }
+
+  .modal-footer{
+    .save-btn{
+      color: white;
+      background-color: #1ad35b;
+      border: 1px white solid;
+      padding: 5px 20px;
+      margin: 0px 5px;
+      &:hover {
+        background-color: #1DB954;
+      }
+    }
+
+    .close-btn{
+      color: white;
+      background-color: #121212;
+      border: 1px white solid;
+      padding: 5px 20px;
+      margin: 0px 5px;
+      &:hover {
+        background-color: white;
+        color: #121212;
+      }
+    }
+  }
+}
