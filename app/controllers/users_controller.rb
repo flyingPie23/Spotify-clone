@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     ids.each do |id|
       @users << User.find(id)
     end
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
   end
 
   def show
@@ -20,5 +23,8 @@ class UsersController < ApplicationController
     @songs = Song.where(user_id: @user).take(3)
 
     @sounds = Song.where(user_id: @user)
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
   end
 end

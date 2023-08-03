@@ -22,18 +22,31 @@
 
   }
 
+  .offcanvas-libray{
+    margin: 5px;
+    padding: 7px;
+    background-color: #121212;
+    border-radius: 15px;
+
+    h2{
+      margin: 7px;
+      padding: 7px;
+      color: white;
+      font-size: 24px;
+    }
+  }
+
   .offcanvas-body{
     background-color: #121212;
     height: 450px;
     border-radius: 15px;
     margin: 5px;
     padding: 7px;
-    height: 450px;
     overflow: scroll;
 
 
     h2{
-      margin: 10px;
+      margin: 7px;
       padding: 7px;
       color: white;
       font-size: 24px;
@@ -60,6 +73,7 @@
           background-color: whitesmoke;
         }
       }
+
     }
   }
 }

@@ -19,16 +19,24 @@
       <ul>
 
     </div>
+
+    <div class="offcanvas-libray">
+      <div class="row">
+          <div class="col">
+            <h2>
+            <i class="fa-regular fa-bookmark"></i>
+            Library
+            </h2>
+          </div>
+          <div class="col d-flex flex-row-reverse">
+            <h2 class="p-2 plus">
+              <i class="fa-solid fa-plus" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"></i>
+            </h2>
+          </div>
+      </div>
+    </div>
+
     <div class="offcanvas-body">
-      <h2>
-        <i class="fa-regular fa-bookmark"></i>
-        Library
-
-        <i class="fa-solid fa-plus d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-      </h2>
-
-        <hr>
-
 
       <% if @playlists.empty? %>
         <div class="empty-state">
