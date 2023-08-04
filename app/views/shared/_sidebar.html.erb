@@ -48,14 +48,15 @@
           </button>
         </div>
       <% else %>
-        <div class="playlists">
-          <ul>
-            <% @playlists.each do |playlist| %>
-              <li> <%= playlist.name %>  </li>
-            <% end %>
-          </ul>
-
-        </div>
+        <% @playlists.each do |playlist|   %>
+          <div class="card-playlist">
+            <img src="<%= playlist.photo.url %>" />
+            <div class="card-product-infos">
+              <h2><%= playlist.name %></h2>
+            </div>
+          </div>
+            <hr>
+        <% end %>
       <% end %>
     </div>
   </div>
