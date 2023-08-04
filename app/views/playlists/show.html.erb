@@ -1,0 +1,42 @@
+<div id="playlist-show">
+  <% order = 0 %>
+  <div class="banner container">
+    <div class="card-product">
+      <img src="<%= @playlist_show.photo.url %>" />
+      <div class="card-product-infos">
+        <h3> PUBLIC PLAYLIST </h3>
+        <h2><%= @playlist_show.name %></h2>
+        <p>
+          <img class="avatar" alt="avatar" src="<%= @playlist_show.user.pfp %>" />
+          <%= @playlist_show.user.username %>, <strong> XXX songs</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-body container">
+    <table class="table table-dark table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Date added</th>
+          <th scope="col"><i class="fa-solid fa-clock"></i></th>
+        </tr>
+
+        <tbody>
+          <tr>
+            <th scope="row"><%= order += 1 %></th>
+            <td>Song Title</td>
+            <td><%= link_to "Artist name", "#", class: "link" %></td>
+            <td>00 days Ago</td>
+            <td>00:00 </td>
+        </tbody>
+
+      </thead>
+    </table>
+  </div>
+
+    <hr>
+</div>

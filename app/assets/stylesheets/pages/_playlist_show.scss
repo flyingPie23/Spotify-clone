@@ -1,0 +1,81 @@
+#playlist-show{
+  .banner{
+    padding: 7px 7px;
+    .card-product {
+      margin: 25px 25px;
+      overflow: hidden;
+      height: 500px;
+      display: flex;
+      align-items: flex-end;
+      img {
+        height: 100%;
+        width: 500px;
+        object-fit: cover;
+      }
+
+      h3{
+
+        font-family: 'Bebas Neue', sans-serif;
+        margin: 14px;
+        font-size: 30px;
+        color: white;
+
+
+      }
+
+      h2 {
+        font-size: 70px;
+        font-family: 'Bebas Neue', sans-serif;
+        margin: 14px;
+        color: white;
+      }
+
+      p {
+        font-size: 30px;
+        line-height: 1.4;
+        color: white;
+        margin: 14px;
+        opacity: .7;
+        margin-bottom: 0;
+        margin-top: 8px;
+        .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  hr{
+    color: white;
+  }
+
+  .table-body{
+    overflow: scroll;
+    height: 250px;
+
+    .link{
+      text-decoration: none;
+      color: white;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+
+.table-body::-webkit-scrollbar {
+  width: 12px;
+  height: 45px;
+}
+
+.table-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+  background-color: rgb(28, 27, 27);
+  border-radius: 15px;
+}

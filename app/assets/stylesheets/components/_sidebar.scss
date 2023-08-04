@@ -77,6 +77,10 @@
 
     }
 
+    a{
+      text-decoration: none;
+    }
+
     .card-playlist {
       overflow: hidden;
       height: 70px;
@@ -91,7 +95,7 @@
         border-radius: 12px;
       }
       h2 {
-        font-size: 32px;
+        font-size: 28px;
         font-family: 'Bebas Neue', sans-serif;
         margin: 25px;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);

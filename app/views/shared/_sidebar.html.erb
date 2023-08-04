@@ -49,12 +49,14 @@
         </div>
       <% else %>
         <% @playlists.each do |playlist|   %>
-          <div class="card-playlist">
-            <img src="<%= playlist.photo.url %>" />
-            <div class="card-product-infos">
-              <h2><%= playlist.name %></h2>
+          <%= link_to playlist_path(playlist) do %>
+            <div class="card-playlist">
+              <img src="<%= playlist.photo.url %>" />
+              <div class="card-product-infos">
+                <h2><%= playlist.name %></h2>
+              </div>
             </div>
-          </div>
+          <% end %>
             <hr>
         <% end %>
       <% end %>
