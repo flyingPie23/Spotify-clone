@@ -53,7 +53,7 @@
 
   .table-body{
     overflow: scroll;
-    height: 250px;
+    height: 350px;
 
     .link{
       text-decoration: none;
@@ -62,6 +62,18 @@
         text-decoration: underline;
       }
     }
+
+    .btn{
+      color: white;
+      border: 1px white solid;
+      border-radius: 25px;
+      padding: 5px 20px;
+      margin: 0px 5px;
+      &:hover {
+        color:black;
+        background-color: whitesmoke;
+      }
+      }
   }
 
 }

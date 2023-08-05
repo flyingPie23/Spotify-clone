@@ -13,6 +13,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist_show = Playlist.find(params[:id])
+    @songs = Song.all
 
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
