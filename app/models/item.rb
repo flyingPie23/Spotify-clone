@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
   belongs_to :playlist
-  belongs_to :user
+  belongs_to :song
 end

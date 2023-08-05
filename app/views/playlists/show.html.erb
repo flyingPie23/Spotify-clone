@@ -62,7 +62,12 @@
               <td><%= song.title %></td>
               <td><%= link_to "#{song.user.username}" , user_path(song.user), class: "link"%></td>
               <td>00:00</td>
-              <td><%= link_to "Add", "#", class: "btn" %></td></td>
+              <td>
+                <%= form_with url: playlist_items_path(song, @item), method: :post do |form| %>
+                  <%= form.submit "Add", class: "btn" %>
+                <% end %>
+               </td>
+
             </tr>
           <% end %>
         </tbody>

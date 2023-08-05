@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :songs
 
-  resources :playlists
+  resources :playlists do
+    resources :items
+  end
 end

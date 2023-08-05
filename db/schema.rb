@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_31_183324) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_225329) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,11 +44,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_183324) do
 
   create_table "items", force: :cascade do |t|
     t.bigint "playlist_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "song_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["playlist_id"], name: "index_items_on_playlist_id"
-    t.index ["user_id"], name: "index_items_on_user_id"
+    t.index ["song_id"], name: "index_items_on_song_id"
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_183324) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "playlists"
-  add_foreign_key "items", "users"
+  add_foreign_key "items", "songs"
   add_foreign_key "playlists", "users"
   add_foreign_key "songs", "users"
 end

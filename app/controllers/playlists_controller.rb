@@ -19,6 +19,7 @@ class PlaylistsController < ApplicationController
     @playlists = Playlist.where(user_id: current_user)
   end
 
+
   private
 
   def playlist_params
