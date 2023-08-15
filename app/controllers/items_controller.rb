@@ -1,26 +1,20 @@
 class ItemsController < ApplicationController
   def create
-    @playlist = Playlist.find(params[:playlist_id])
-
-
     @item = Item.new(item_params)
-    @item.playlist = @playlist
-    @item.song = Song.find(params[:song_id])
+    @item.playlist = Playlist.find(params[:item][:playlist_id])
+    @item.song = Song.find(params[:item][:song_id])
+
 
     if @item.save
-      redirect_to playlist_path(@playlist), notice: 'Song was added to the playlist succesfully :)'
+      redirect_to playlist_path(@item.playlist), notice: 'Item was sucessfully created :)'
     else
-      render :new, status: :unprocessable_entity, notice: 'Song couldnt be added to the playlist :('
+      redirect_to root_path, status: :unprocessable_entity, notice: 'Item wasnt created :('
     end
-  end
-
-  def new
-    @item = Item.new
   end
 
   private
 
   def item_params
-    params.require(:items).permit(:playlist, :song)
+    params.require(:item).permit(:playlist_id, :song_id)
   end
 end

@@ -17,6 +17,12 @@ class PlaylistsController < ApplicationController
 
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
+
+    @item = Item.new
+
+    @items = Item.where(playlist_id: @playlist_show)
+
+
   end
 
 

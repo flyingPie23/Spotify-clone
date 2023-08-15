@@ -9,7 +9,7 @@
         <h2><%= @playlist_show.name %></h2>
         <p>
           <img class="avatar" alt="avatar" src="<%= @playlist_show.user.pfp %>" />
-          <%= @playlist_show.user.username %>, <strong> XXX songs</strong>
+          <%= @playlist_show.user.username %>, <strong> <%= @items.length %> songs</strong>
         </p>
       </div>
     </div>
@@ -27,13 +27,15 @@
         </tr>
 
         <tbody>
-          <tr>
-            <th scope="row"><%= order1 += 1 %></th>
-            <td>Song Title</td>
-            <td><%= link_to "Artist name", "#", class: "link" %></td>
-            <td>00:00 </td>
-            <td>00 days Ago</td>
-          </tr>
+          <% @items.each do |item| %>
+            <tr>
+              <th scope="row"><%= order1 += 1 %></th>
+              <td><%= link_to item.song.title, song_path(item.song), class: "link" %></td>
+              <td><%= link_to item.song.user.username, user_path(item.song.user), class: "link" %></td>
+              <td>00:00 </td>
+              <td><%= time_ago_in_words(item.created_at) %></td>
+            </tr>
+          <% end %>
         </tbody>
 
       </thead>
@@ -60,14 +62,15 @@
             <tr>
               <th scope="row"><%= order2 += 1 %></th>
               <td><%= song.title %></td>
-              <td><%= link_to "#{song.user.username}" , user_path(song.user), class: "link"%></td>
+              <td><%= link_to song.user.username, user_path(song.user), class: "link" %></td>
               <td>00:00</td>
               <td>
-                <%= form_with url: playlist_items_path(song, @item), method: :post do |form| %>
-                  <%= form.submit "Add", class: "btn" %>
+                <%= simple_form_for [@playlist_show, @item] do |form| %>
+                  <%= form.hidden_field :playlist_id, value: @playlist_show.id %>
+                  <%= form.hidden_field :song_id, value: song.id %>
+                  <%= form.submit 'Create Item', class: "btn" %>
                 <% end %>
-               </td>
-
+              </td>
             </tr>
           <% end %>
         </tbody>
