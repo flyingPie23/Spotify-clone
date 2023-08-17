@@ -37,28 +37,37 @@
     </div>
 
     <div class="offcanvas-body">
+      <% if user_signed_in? %>
+        <% if @playlists.empty? %>
+            <div class="empty-state">
+              <i class="fa-solid fa-compact-disc icon"></i>
+              <p>  Start by creating your Playlists </p>
 
-      <% if @playlists.empty? %>
-        <div class="empty-state">
-          <i class="fa-solid fa-compact-disc icon"></i>
-          <p>  Start by creating your Playlists </p>
-
-          <button type="button" class="side-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Create a Playlist
-          </button>
-        </div>
-      <% else %>
-        <% @playlists.each do |playlist|   %>
-          <%= link_to playlist_path(playlist) do %>
-            <div class="card-playlist">
-              <img src="<%= playlist.photo.url %>" />
-              <div class="card-product-infos">
-                <h2><%= playlist.name %></h2>
-              </div>
+              <button type="button" class="side-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Create a Playlist
+              </button>
             </div>
-          <% end %>
-            <hr>
+          <% else %>
+            <% @playlists.each do |playlist|   %>
+              <%= link_to playlist_path(playlist) do %>
+                <div class="card-playlist">
+                  <img src="<%= playlist.photo.url %>" />
+                  <div class="card-product-infos">
+                    <h2><%= playlist.name %></h2>
+                  </div>
+                </div>
+              <% end %>
+                <hr>
+            <% end %>
         <% end %>
+      <% else %>
+        <div class="empty-state">
+          <i class="fa-solid fa-user-plus"></i>
+          <p>  Start by Logging in your account </p>
+
+          <%= link_to "Log In", new_user_session_path, class: "side-btn" %>
+        </div>
+
       <% end %>
     </div>
   </div>

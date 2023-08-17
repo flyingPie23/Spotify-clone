@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :follow, only: [:create]
+
   resources :songs
 
   resources :playlists do
