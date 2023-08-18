@@ -15,7 +15,8 @@
     </div>
   </div>
 
-  <div class="table-body container">
+  <% if @items.length > 0 %>
+    <div class="table-body container">
     <table class="table table-dark table-hover">
       <thead>
         <tr>
@@ -41,41 +42,69 @@
       </thead>
     </table>
   </div>
+  <% end %>
+
+
+
+
+
+    <div class="search-bar">
+      <h2> Lets find Something New for Your Playlist </h2>
+      <div class="bar">
+        <%= form_with url: playlist_path(@playlist_show), method: :get, class: "d-flex" do %>
+          <i class="fa-solid fa-house-user"></i>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <% end %>
+      </div>
+    </div>
 
     <hr>
 
+
   <div class="table-body container">
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Artist</th>
-          <th scope="col"><i class="fa-solid fa-clock"></th>
-          <th scope="col">Add to playlist</i></th>
-        </tr>
+    <% if @songs.empty? %>
+      <div class="empty-state">
+        <i class="fa-solid fa-square-poll-vertical"></i>
+        <h1> No results found for your query </h1>
+        <h3> try searching using Song titles or Artist names </h3>
+      </div>
+    <% else %>
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col"><i class="fa-solid fa-clock"></th>
+            <th scope="col">Add to playlist</i></th>
+          </tr>
 
-        <tbody>
+          <tbody>
 
 
-          <% @songs.each do |song| %>
-            <tr>
-              <th scope="row"><%= order2 += 1 %></th>
-              <td><%= song.title %></td>
-              <td><%= link_to song.user.username, user_path(song.user), class: "link" %></td>
-              <td>00:00</td>
-              <td>
-                <%= simple_form_for [@playlist_show, @item] do |form| %>
-                  <%= form.hidden_field :playlist_id, value: @playlist_show.id %>
-                  <%= form.hidden_field :song_id, value: song.id %>
-                  <%= form.submit 'Create Item', class: "btn" %>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
+            <% @songs.each do |song| %>
+              <tr>
+                <th scope="row"><%= order2 += 1 %></th>
+                <td><%= song.title %></td>
+                <td><%= link_to song.user.username, user_path(song.user), class: "link" %></td>
+                <td>00:00</td>
+                <td>
+                  <%= simple_form_for [@playlist_show, @item] do |form| %>
+                    <%= form.hidden_field :playlist_id, value: @playlist_show.id %>
+                    <%= form.hidden_field :song_id, value: song.id %>
+                    <%= form.submit 'Add', class: "btn" %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
 
-      </thead>
-    </table>
+        </thead>
+      </table>
+    <% end %>
   </div>
 </div>

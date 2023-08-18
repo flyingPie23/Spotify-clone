@@ -1,0 +1,23 @@
+.search-bar{
+  margin: 5px 80px;
+  padding: 12px;
+  h2{
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 50px;
+  }
+
+  .bar{
+    i{
+      color: white;
+      font-size: 30px;
+      margin-right: 5px;
+      padding: 12px;
+    }
+
+    input{
+      width: 640px;
+    }
+  }
+}

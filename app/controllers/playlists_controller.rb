@@ -13,7 +13,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist_show = Playlist.find(params[:id])
-    @songs = Song.all
+
 
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
@@ -21,6 +21,16 @@ class PlaylistsController < ApplicationController
     @item = Item.new
 
     @items = Item.where(playlist_id: @playlist_show)
+
+    @songs = Song.all
+
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        songs.title ILIKE :query
+        OR users.username ILIKE :query
+      SQL
+      @songs = @songs.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+    end
 
 
   end

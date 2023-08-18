@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
 
 
     if @item.save
-      redirect_to playlist_path(@item.playlist), notice: 'Item was sucessfully created :)'
+      redirect_to playlist_path(@item.playlist), notice: "#{@item.song.title} was sucessfully added to #{@item.playlist.name} :)"
     else
-      redirect_to root_path, status: :unprocessable_entity, notice: 'Item wasnt created :('
+      redirect_to root_path, status: :unprocessable_entity, notice: 'something went wrong :('
     end
   end
 

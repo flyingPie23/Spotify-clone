@@ -55,6 +55,20 @@
     overflow: scroll;
     height: 350px;
 
+    .empty-state{
+      color: white;
+      text-align: center;
+      margin: 80px 0px;
+      i{
+        font-size: 80px;
+      }
+      h1{
+        font-size: 70px;
+        font-family: 'Bebas Neue', sans-serif;
+        margin: 14px;
+      }
+    }
+
     .link{
       text-decoration: none;
       color: white;
