@@ -206,35 +206,78 @@ user3 = User.create(
   pfp: "https://assets.entrepreneur.com/content/3x2/2000/1652302233-GettyImages-1395845200.jpg?format=pjeg&auto=webp&crop=4:3",
   password: "123456"
 )
-  Song.create(
-    title: "in the Heights",
-    cover: "https://m.media-amazon.com/images/M/MV5BMzM1ZDY0YTktZTYzZi00MjZjLTllMDMtMmNlMmM5NmY4ZjllXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_.jpg",
-    user: user3
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "9600",
-    cover: "https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2021/06/InTheHeights.jpg?fit=2400%2C1600&ssl=1",
-    user: user3
+    Song.create(
+      title: "in the Heights",
+      cover: "https://m.media-amazon.com/images/M/MV5BMzM1ZDY0YTktZTYzZi00MjZjLTllMDMtMmNlMmM5NmY4ZjllXkEyXkFqcGdeQXVyMTA1OTcyNDQ4._V1_.jpg",
+      user: user3,
+      mp3: audio_file
+    )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', '96,000 - In The Heights Motion Picture Soundtrack (Official Audio).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: '96,000 - In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Alexander Hamilton",
-    cover: "https://upload.wikimedia.org/wikipedia/en/8/83/Hamilton-poster.jpg",
-    user: user3
+    Song.create(
+      title: "9600",
+      cover: "https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2021/06/InTheHeights.jpg?fit=2400%2C1600&ssl=1",
+      user: user3,
+      mp3: audio_file,
+
+    )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Hamilton - Alexander Hamilton lyrics.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'Hamilton - Alexander Hamilton lyrics.mp3',
+      content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "My Shot",
-    cover: "https://images.firstpost.com/wp-content/uploads/2020/07/hamilton-6401.jpg",
-    user: user3
+    Song.create(
+      title: "Alexander Hamilton",
+      cover: "https://upload.wikimedia.org/wikipedia/en/8/83/Hamilton-poster.jpg",
+      user: user3,
+      mp3: audio_file
+    )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Hamilton - My Shot lyrics.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Hamilton - My Shot lyrics.mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "Waiting On a Miracle",
-    cover: "https://pm1.aminoapps.com/8166/15dfde6165b9770d5a21b33e7383283c00c7b280r1-1026-614v2_hq.jpg",
-    user: user3
+    Song.create(
+      title: "My Shot",
+      cover: "https://images.firstpost.com/wp-content/uploads/2020/07/hamilton-6401.jpg",
+      user: user3,
+      mp3: audio_file
+    )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Stephanie Beatriz - Waiting On A Miracle (From _Encanto_Lyric Video).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'Stephanie Beatriz - Waiting On A Miracle (From _Encanto_Lyric Video).mp3',
+    content_type: 'audio/mpeg'
   )
-  Song.create(
-    title: "The Room Where It Happend",
-    cover: "https://149674310.v2.pressablecdn.com/wp-content/uploads/2021/09/Burr.jpg",
-    user: user3
+    Song.create(
+      title: "Waiting On a Miracle",
+      cover: "https://pm1.aminoapps.com/8166/15dfde6165b9770d5a21b33e7383283c00c7b280r1-1026-614v2_hq.jpg",
+      user: user3,
+      mp3: audio_file
+    )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'The Room Where It Happens  Hamilton Animatic.mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'The Room Where It Happens  Hamilton Animatic.mp3',
+    content_type: 'audio/mpeg'
+  )
+    Song.create(
+      title: "The Room Where It Happend",
+      cover: "https://149674310.v2.pressablecdn.com/wp-content/uploads/2021/09/Burr.jpg",
+      user: user3,
+      mp3: audio_file
   )
     puts "3/12 done"
 
