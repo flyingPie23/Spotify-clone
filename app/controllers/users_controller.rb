@@ -1,17 +1,9 @@
 class UsersController < ApplicationController
   def index
-    @songs = Song.all
-    ids = []
+    @users = User.all
 
-    @songs.each do |song|
-      ids << song.user_id
-    end
-
-    ids = ids.uniq
-
-    @users = []
-    ids.each do |id|
-      @users << User.find(id)
+    if params[:query].present?
+      @users = @users.where("username ILIKE ?", "%#{params[:query]}%")
     end
 
     @playlist = Playlist.new

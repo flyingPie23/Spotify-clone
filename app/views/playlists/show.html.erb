@@ -17,36 +17,37 @@
 
   <% if @items.length > 0 %>
     <div class="table-body container">
-    <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Artist</th>
-          <th scope="col"><i class="fa-solid fa-clock"></i></th>
-          <th scope="col">Date added</th>
-        </tr>
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Artist</th>
+            <th scope="col"><i class="fa-solid fa-clock"></i></th>
+            <th scope="col">Date added</th>
+          </tr>
 
-        <tbody>
-          <% @items.each do |item| %>
-            <tr>
-              <th scope="row"><%= order1 += 1 %></th>
-              <td><%= link_to item.song.title, song_path(item.song), class: "link" %></td>
-              <td><%= link_to item.song.user.username, user_path(item.song.user), class: "link" %></td>
-              <td>00:00 </td>
-              <td><%= time_ago_in_words(item.created_at) %></td>
-            </tr>
-          <% end %>
-        </tbody>
+          <tbody>
+            <% @items.each do |item| %>
+              <tr>
+                <th scope="row"><%= order1 += 1 %></th>
+                <td><%= link_to item.song.title, song_path(item.song), class: "link" %></td>
+                <td><%= link_to item.song.user.username, user_path(item.song.user), class: "link" %></td>
+                <td>00:00 </td>
+                <td><%= time_ago_in_words(item.created_at) %></td>
+              </tr>
+            <% end %>
+          </tbody>
 
-      </thead>
-    </table>
-  </div>
+        </thead>
+      </table>
+    </div>
   <% end %>
 
 
+    <hr>
 
-
+  <% if @playlist_show.user == current_user %>
 
     <div class="search-bar">
       <h2> Lets find Something New for Your Playlist </h2>
@@ -62,49 +63,81 @@
       </div>
     </div>
 
-    <hr>
+    <div class="table-body container">
+      <% if @songs.empty? %>
+        <div class="empty-state">
+          <i class="fa-solid fa-square-poll-vertical"></i>
+          <h1> No results found for your query </h1>
+          <h3> try searching using Song titles or Artist names </h3>
+        </div>
+      <% else %>
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Artist</th>
+              <th scope="col"><i class="fa-solid fa-clock"></th>
+              <th scope="col">Add to playlist</i></th>
+            </tr>
+
+            <tbody>
 
 
-  <div class="table-body container">
-    <% if @songs.empty? %>
-      <div class="empty-state">
-        <i class="fa-solid fa-square-poll-vertical"></i>
-        <h1> No results found for your query </h1>
-        <h3> try searching using Song titles or Artist names </h3>
+              <% @songs.each do |song| %>
+                <tr>
+                  <th scope="row"><%= order2 += 1 %></th>
+                  <td><%= song.title %></td>
+                  <td><%= link_to song.user.username, user_path(song.user), class: "link" %></td>
+                  <td>00:00</td>
+                  <td>
+                    <%= simple_form_for [@playlist_show, @item] do |form| %>
+                      <%= form.hidden_field :playlist_id, value: @playlist_show.id %>
+                      <%= form.hidden_field :song_id, value: song.id %>
+                      <%= form.submit 'Add', class: "btn" %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+
+          </thead>
+        </table>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class = "container">
+      <div class="section">
+        <h2> Check other Playlists from Other Artists </h2>
+        <div class="grid">
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png)">
+            SMITHEREENS
+          </div>
+
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i1.sndcdn.com/artworks-B1dFa9QfnmSyg7Cu-VzfVZQ-t500x500.jpg)">
+            SKY KING
+          </div>
+
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.scdn.co/image/ab67616d0000b273c477f199067849f57f8a1f4e)">
+            Incase I make it
+          </div>
+
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.genius.com/7c0bb04f0762b0204bb9196a84b939ee.1000x1000x1.jpg)">
+            Bitter Thongues
+          </div>
+
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.scdn.co/image/ab67616d0000b27377dd4e8cd4e792033c92b5a2)">
+            The Miracle
+          </div>
+
+          <div class="card-songs" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://m.media-amazon.com/images/M/MV5BNjViNWRjYWEtZTI0NC00N2E3LTk0NGQtMjY4NTM3OGNkZjY0XkEyXkFqcGdeQXVyMjUxMTY3ODM@._V1_.jpg)">
+            Alexander Hamilton
+          </div>
+        </div>
       </div>
-    <% else %>
-      <table class="table table-dark table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Artist</th>
-            <th scope="col"><i class="fa-solid fa-clock"></th>
-            <th scope="col">Add to playlist</i></th>
-          </tr>
-
-          <tbody>
+    </div>
+  <% end %>
 
 
-            <% @songs.each do |song| %>
-              <tr>
-                <th scope="row"><%= order2 += 1 %></th>
-                <td><%= song.title %></td>
-                <td><%= link_to song.user.username, user_path(song.user), class: "link" %></td>
-                <td>00:00</td>
-                <td>
-                  <%= simple_form_for [@playlist_show, @item] do |form| %>
-                    <%= form.hidden_field :playlist_id, value: @playlist_show.id %>
-                    <%= form.hidden_field :song_id, value: song.id %>
-                    <%= form.submit 'Add', class: "btn" %>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-
-        </thead>
-      </table>
-    <% end %>
-  </div>
 </div>

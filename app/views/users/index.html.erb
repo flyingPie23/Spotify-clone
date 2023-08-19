@@ -53,26 +53,45 @@
         </div>
       </div>
 
+
       <hr>
-    </div>
 
-    <div class="body">
-      <div class="grid">
-          <% @users.each do |user| %>
-            <%= link_to user_path(user) do %>
-              <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
-                <%= user.username %>
-
-                <div class="go-corner" href="#">
-                  <div class="go-arrow">
-                    →
-                  </div>
-                </div>
-              </div>
-
-            <% end %>
-          <% end %>
-      </div>
     </div>
   </div>
+
+  <div class="search-bar">
+      <h2> Lets find Something New for Your Playlist </h2>
+      <div class="bar">
+        <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+          <i class="fa-solid fa-house-user"></i>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <% end %>
+      </div>
+  </div>
+
+  <div class= "container">
+    <div class="body">
+        <div class="grid">
+            <% @users.each do |user| %>
+              <%= link_to user_path(user) do %>
+                <div class="card-artists" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= user.pfp %>)">
+                  <%= user.username %>
+
+                  <div class="go-corner" href="#">
+                    <div class="go-arrow">
+                      →
+                    </div>
+                  </div>
+                </div>
+
+              <% end %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+
 </div>
