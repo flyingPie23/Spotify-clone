@@ -2,7 +2,12 @@
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
       <h1> <%= @user.username %> </h1>
-      <%= link_to "Follow", "#", class: "follow-btn" %>
+
+      <%= simple_form_for [@user, @follow]  do |f| %>
+        <%= f.hidden_field :followed_id, value: @user.id %>
+        <%= f.hidden_field :follower_id, value: current_user.id %>
+        <%= f.submit 'Add', class: "follow-btn" %>
+      <% end %>
 
       <div class="footer position-absolute bottom-0 end-0">
         <div class="links">

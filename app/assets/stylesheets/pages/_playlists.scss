@@ -1,0 +1,45 @@
+#playlists{
+  .header{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+    h1{
+      color: white;
+      font-size: 70px;
+      font-family: 'Bebas Neue', sans-serif;
+      text-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+    }
+
+  }
+
+  .body{
+
+    margin-top: 30px;
+
+    overflow: scroll;
+    height: 550px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+      a{
+        text-decoration: none;
+      }
+
+    }
+  }
+}
+
+.body::-webkit-scrollbar {
+  width: 12px;
+  height: 45px;
+}
+
+.body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: rgb(28, 27, 27);
+  border-radius: 15px;
+}

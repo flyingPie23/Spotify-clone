@@ -1,10 +1,8 @@
 class FollowsController < ApplicationController
   def create
     @follow = Follow.new(follow_params)
-    @user = User.find(params[:user_id])
-
-    @follow.follower_id = current_user
-    @follow.followed_id = @user
+    @follow.followed_id = User.find(params[:user_id]).id
+    @follow.follower_id = User.find(params[:current_user]).id
 
     if @follow.save
       redirect_to root_path, notice: 'user was sucessfully followed :)'
@@ -15,7 +13,7 @@ class FollowsController < ApplicationController
 
   private
 
-  def contract_params
-    params.require(:follow).permit(:user_id)
+  def follow_params
+    params.require(:follow).permit(:followed_id, :follower_id, :user_id, :current_user )
   end
 end

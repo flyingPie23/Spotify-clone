@@ -1,5 +1,12 @@
 class PlaylistsController < ApplicationController
 
+  def index
+    @playlist_index = Playlist.all
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
+  end
+
   def create
     @playlist = Playlist.new(playlist_params)
     @playlist.user = current_user
@@ -15,9 +22,6 @@ class PlaylistsController < ApplicationController
     @playlist_show = Playlist.find(params[:id])
 
 
-    @playlist = Playlist.new
-    @playlists = Playlist.where(user_id: current_user)
-
     @item = Item.new
 
     @items = Item.where(playlist_id: @playlist_show)
@@ -31,6 +35,9 @@ class PlaylistsController < ApplicationController
       SQL
       @songs = @songs.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
     end
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
 
 
   end
