@@ -9,7 +9,7 @@
       <h2> Lets find Your new favorite Artist </h2>
       <div class="bar">
         <%= form_with url: users_path, method: :get, class: "d-flex" do %>
-          <i class="fa-solid fa-house-user"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
           <%= text_field_tag :query,
               params[:query],
               class: "form-control",

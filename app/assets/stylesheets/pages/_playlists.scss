@@ -18,12 +18,46 @@
 
     overflow: scroll;
     height: 550px;
+
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
       a{
         text-decoration: none;
+      }
+
+      .card-playlist {
+        overflow: hidden;
+        height: 200px;
+        width: 550px;
+        color: white;
+        background: rgba(0,0,0,0.2);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        img {
+          height: 100%;
+          width: 200px;
+          object-fit: cover;
+        }
+        h2 {
+          font-size: 40px;
+          font-family: 'Bebas Neue', sans-serif;
+          margin: 15px;
+        }
+        p {
+          font-size: 17px;
+          line-height: 1.4;
+          opacity: .7;
+          margin-left: 15px;
+          margin-bottom: 0;
+          margin-top: 8px;
+        }
+
+        &:hover {
+          box-shadow: 0 0 15px transparent;
+        }
       }
 
     }

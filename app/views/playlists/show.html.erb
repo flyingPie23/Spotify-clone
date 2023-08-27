@@ -37,7 +37,7 @@
                 <th scope="row"><%= order1 += 1 %></th>
                 <td><%= link_to item.song.title, song_path(item.song), class: "link" %></td>
                 <td><%= link_to item.song.user.username, user_path(item.song.user), class: "link" %></td>
-                <td><%= item.song.mp3.url %> </td>
+                <td> 00:00 </td>
                 <td><%= time_ago_in_words(item.created_at) %></td>
               </tr>
             <% end %>

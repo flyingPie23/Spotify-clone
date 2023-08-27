@@ -3,6 +3,14 @@ class PlaylistsController < ApplicationController
   def index
     @playlist_index = Playlist.all
 
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        playlists.name ILIKE :query
+        OR users.username ILIKE :query
+      SQL
+      @playlist_index = @playlist_index.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+    end
+
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
   end
@@ -12,7 +20,7 @@ class PlaylistsController < ApplicationController
     @playlist.user = current_user
 
     if @playlist.save
-      redirect_to root_path, notice: 'playlist was sucessfully created :)'
+      redirect_to playlist_path(@playlist), notice: 'playlist was sucessfully created :)'
     else
       redirect_to root_path, status: :unprocessable_entity, notice: 'playlist wasnt created :('
     end
