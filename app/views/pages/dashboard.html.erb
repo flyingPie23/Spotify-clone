@@ -1,0 +1,76 @@
+<div id="dashboard">
+  <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
+    <div class="container">
+      <h1> <%= @user.username %> </h1>
+      <p> XXX FOLLOWERS </p>
+
+      <div class="footer position-absolute bottom-0 end-0">
+        <div class="links">
+          <%= link_to "Edit Account Details", "###", class: "edit-btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col grids">
+          <h2>Popular Songs:</h2>
+
+          <ul>
+            <% @songs.each do |song| %>
+              <%= link_to song_path(song) do %>
+                <li>
+                  <div class="card-playlist">
+                    <img src= "<%= song.cover %>"/>
+                    <div class="card-playlist-infos">
+                      <h2><%= song.title %></h2>
+                    </div>
+
+                  </div>
+                </li>
+                  <hr>
+              <% end %>
+            <% end %>
+          </ul>
+
+        </div>
+
+        <div class="col grids">
+          <h2>Popular Playlists:</h2>
+          <ul>
+            <li>
+              <div class="card-playlist">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
+                <div class="card-playlist-infos">
+                  <h2>SMITHEREENS</h2>
+                </div>
+              </div>
+            </li>
+
+              <hr>
+
+            <li>
+              <div class="card-playlist">
+                <img src="https://i.scdn.co/image/ab67616d0000b2736fbac72609eca05f5d300c9f" />
+                <div class="card-playlist-infos">
+                  <h2>Wake up & its Over</h2>
+                </div>
+              </div>
+            </li>
+
+              <hr>
+
+            <li>
+              <div class="card-playlist">
+                <img src="https://media.mmorpg.com/images/heroes/news/52723.jpg"/>
+                <div class="card-playlist-infos">
+                  <h2>Radical Summer</h2>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>

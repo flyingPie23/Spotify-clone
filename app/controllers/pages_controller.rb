@@ -8,4 +8,12 @@ class PagesController < ApplicationController
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
   end
+
+  def dashboard
+    @user = current_user
+    @songs = Song.where(user_id: @user)
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
+  end
 end

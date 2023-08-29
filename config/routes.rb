@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post "follows", to: "follows#create" , as: "follows"
   end
 
+  get "dashboard", to: "pages#dashboard" , as: "dashboard"
+
   resources :follow, only: [:create]
 
   resources :songs
