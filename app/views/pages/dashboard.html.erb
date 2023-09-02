@@ -2,7 +2,6 @@
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
       <h1> <%= @user.username %> </h1>
-      <p> XXX FOLLOWERS </p>
 
       <div class="footer position-absolute bottom-0 end-0">
         <div class="links">
@@ -13,31 +12,67 @@
   </div>
 
   <div class="container">
-    <div class="row">
-        <div class="col grids">
-          <h2>Popular Songs:</h2>
+
+    <h2>Analytics:</h2>
+
+    <div class="analytics">
+      <div class="select">
+        <i class="fa-solid fa-user"></i>
+        <h2>Followers</h2>
+        <h3> <strong> XXX </strong> </h3>
+        <p> <strong> XXX </strong> in the Past Week </p>
+      </div>
+
+      <div class="select">
+        <i class="fa-solid fa-chart-simple"></i>
+        <h2>Top Track</h2>
+        <p> in the past week</p>
+        <div class="card-song" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.volvocars.com/images/support/img05d9160a2d5e427dc0a801525d71e1f9_1_--_--_VOICEpnghigh.png)">
+          Song Title
+        </div>
+      </div>
+
+      <div class="select">
+        <i class="fa-solid fa-music"></i>
+        <h2>Streams</h2>
+        <h3> <strong> XXX </strong> </h3>
+        <p> <strong> XXX </strong> in the Past Week </p>
+      </div>
+    </div>
+
+    <h2>Manage Your Discography:</h2>
+
+    <div class="grids">
 
           <ul>
             <% @songs.each do |song| %>
-              <%= link_to song_path(song) do %>
+              <hr>
+                <div class="dropdown d-flex justify-content-end">
+                  <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Analytics</a></li>
+                    <li><a class="dropdown-item" href="#">Edit Details</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                  </ul>
+                </div>
+
                 <li>
                   <div class="card-playlist">
                     <img src= "<%= song.cover %>"/>
                     <div class="card-playlist-infos">
-                      <h2><%= song.title %></h2>
+                      <h2> <%= song.title %> </h2>
                     </div>
-
                   </div>
                 </li>
-                  <hr>
-              <% end %>
             <% end %>
           </ul>
 
-        </div>
+    </div>
 
-        <div class="col grids">
-          <h2>Popular Playlists:</h2>
+    <h2>Manage Your Playlists:</h2>
+
+    <div class="grids">
           <ul>
             <li>
               <div class="card-playlist">
@@ -70,7 +105,6 @@
               </div>
             </li>
           </ul>
-        </div>
     </div>
   </div>
 </div>
