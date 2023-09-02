@@ -1,17 +1,21 @@
 <div id="dashboard">
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
-      <h1> <%= @user.username %> </h1>
-
-      <div class="footer position-absolute bottom-0 end-0">
-        <div class="links">
-          <%= link_to "Edit Account Details", "###", class: "edit-btn" %>
-        </div>
-      </div>
+      <%= link_to users_path, class:"dashboard-link" do   %>
+        <h1>
+          <i class="fa-solid fa-pen-to-square"></i>
+          <%= @user.username %>
+        </h1>
+      <% end %>
     </div>
   </div>
 
   <div class="container">
+
+    <h2>Release your next big hit:</h2>
+    <div class="form">
+
+    </div>
 
     <h2>Analytics:</h2>
 
@@ -26,7 +30,7 @@
       <div class="select">
         <i class="fa-solid fa-chart-simple"></i>
         <h2>Top Track</h2>
-        <p> in the past week</p>
+        <h3> in the past week</h3p>
         <div class="card-song" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.volvocars.com/images/support/img05d9160a2d5e427dc0a801525d71e1f9_1_--_--_VOICEpnghigh.png)">
           Song Title
         </div>
@@ -43,8 +47,7 @@
     <h2>Manage Your Discography:</h2>
 
     <div class="grids">
-
-          <ul>
+        <ul>
             <% @songs.each do |song| %>
               <hr>
                 <div class="dropdown d-flex justify-content-end">
@@ -58,7 +61,7 @@
                 </div>
 
                 <li>
-                  <div class="card-playlist">
+                  <div class="card-playlist" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src= "<%= song.cover %>"/>
                     <div class="card-playlist-infos">
                       <h2> <%= song.title %> </h2>
@@ -66,8 +69,7 @@
                   </div>
                 </li>
             <% end %>
-          </ul>
-
+        </ul>
     </div>
 
     <h2>Manage Your Playlists:</h2>

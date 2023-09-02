@@ -13,6 +13,8 @@ class PagesController < ApplicationController
     @user = current_user
     @songs = Song.where(user_id: @user)
 
+    @song_new = Song.new
+
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
   end
