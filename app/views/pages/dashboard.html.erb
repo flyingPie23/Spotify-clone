@@ -14,6 +14,25 @@
 
     <h2>Release your next big hit:</h2>
     <div class="form">
+      <div class="container cover">
+        <img src="<%= @user.pfp %>" >
+      </div>
+
+
+      <div class="container create-form">
+        <%= simple_form_for @song_new do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :title, :label => 'Song Title', required: true%>
+          <%= f.input :cover, :label => 'Cover Art', required: true%>
+          <%= f.input :mp3, required: true, as: :file  %>
+        <div class="form-btn">
+           <%= f.button :submit, value: 'Save', class: "form-submit", type: "button" %>
+        </div>
+        <% end %>
+      </div>
+
+        <hr>
+        <hr>
 
     </div>
 
@@ -27,7 +46,7 @@
         <p> <strong> XXX </strong> in the Past Week </p>
       </div>
 
-      <div class="select">
+      <div class="center">
         <i class="fa-solid fa-chart-simple"></i>
         <h2>Top Track</h2>
         <h3> in the past week</h3p>
