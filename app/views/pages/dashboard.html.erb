@@ -1,14 +1,13 @@
 <div id="dashboard">
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
-      <%= link_to users_path, class:"dashboard-link" do   %>
-        <h1>
-          <i class="fa-solid fa-pen-to-square"></i>
-          <%= @user.username %>
-        </h1>
-      <% end %>
+      <h1>
+        <i class="fa-solid fa-pen-to-square pen" data-bs-toggle="modal" data-bs-target="#user-edit"></i>
+        <%= @user.username %>
+      </h1>
     </div>
   </div>
+
 
   <div class="container">
 
@@ -24,7 +23,7 @@
           <%= f.error_notification %>
           <%= f.input :title, :label => 'Song Title', required: true%>
           <%= f.input :cover, :label => 'Cover Art', required: true%>
-          <%= f.input :mp3, required: true, as: :file  %>
+          <%= f.input :mp3, :label => 'Song File',required: true, as: :file  %>
         <div class="form-btn">
            <%= f.button :submit, value: 'Save', class: "form-submit", type: "button" %>
         </div>
@@ -69,22 +68,21 @@
         <ul>
             <% @songs.each do |song| %>
               <hr>
-                <div class="dropdown d-flex justify-content-end">
-                  <i class="fa-solid fa-bars" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Analytics</a></li>
-                    <li><a class="dropdown-item" href="#">Edit Details</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                  </ul>
-                </div>
 
                 <li>
-                  <div class="card-playlist" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src= "<%= song.cover %>"/>
-                    <div class="card-playlist-infos">
-                      <h2> <%= song.title %> </h2>
+                  <div class="dropdown">
+                    <div class="card-playlist" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src= "<%= song.cover %>"/>
+                      <div class="card-playlist-infos">
+                        <h2> <%= song.title %> </h2>
+                      </div>
                     </div>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="#">Analytics</a></li>
+                      <li><a class="dropdown-item" href="#">Edit Details</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>
                   </div>
                 </li>
             <% end %>
