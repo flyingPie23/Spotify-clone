@@ -70,22 +70,15 @@
         <ul>
             <% @songs.each do |song| %>
               <hr>
-
                 <li>
-                  <div class="dropdown">
-                    <div class="card-playlist" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%= link_to edit_song_path(song) do %>
+                    <div class="card-playlist">
                       <img src= "<%= song.cover %>"/>
                       <div class="card-playlist-infos">
                         <h2> <%= song.title %> </h2>
                       </div>
                     </div>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="#">Analytics</a></li>
-                      <li><a class="dropdown-item" href="#">Edit Details</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Delete</a></li>
-                    </ul>
-                  </div>
+                  <% end %>
                 </li>
             <% end %>
         </ul>
@@ -129,7 +122,7 @@
     </div>
   </div>
 </div>
-
+<!-- the modal for the user edit -->
 <div id="playlist_new">
   <div class="modal fade" id="user_edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

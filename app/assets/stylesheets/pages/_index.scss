@@ -7,6 +7,7 @@
 @import "playlist_show";
 @import "playlists";
 @import "dashboard";
+@import "song_edit";
 
 body{
   background-color: #121212;
@@ -23,4 +24,42 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(28, 27, 27);
   border-radius: 15px;
+}
+
+
+audio::-webkit-media-controls-panel {
+  background-color: #191414;
+}
+
+audio::-webkit-media-controls-mute-button{
+  background-color: #1DB954;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-mute-button:hover {
+  background-color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+  background-color: #1DB954;
+  border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+  background-color: white;
+}
+
+audio::-webkit-media-controls-current-time-display {
+  color: white;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+  color: #1DB954;
+}
+
+audio::-webkit-media-controls-volume-slider {
+  background-color: white;
+  border-radius: 25px;
+  padding-left: 8px;
+  padding-right: 8px;
 }

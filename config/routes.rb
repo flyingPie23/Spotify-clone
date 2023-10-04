@@ -6,13 +6,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :users do
-    post "follows", to: "follows#create" , as: "follows"
-  end
+  resources :users
 
-  get "dashboard", to: "pages#dashboard" , as: "dashboard" do
-    resources :songs
-  end
+  get "dashboard", to: "pages#dashboard" , as: "dashboard"
 
 
   resources :songs

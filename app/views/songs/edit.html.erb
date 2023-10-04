@@ -1,0 +1,33 @@
+<div id="song_edit">
+  <div class = "container">
+    <h2>Release your next big hit:</h2>
+    <div class="form">
+      <div class="container cover">
+        <img src="<%= @song.cover %>" >
+
+        <audio controls class="player">
+          <source src="<%= @song.mp3.url %>">
+        </audio>
+      </div>
+
+
+      <div class="container create-form">
+        <%= simple_form_for @song do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :title, :label => 'Song Title'%>
+          <%= f.input :cover, :label => 'Cover Art'%>
+          <%= f.input :mp3, :label => 'Song File', as: :file  %>
+
+
+          <div class="form-btn">
+            <%= f.button :submit, value: 'Save', class: "form-submit"%>
+
+            <%= link_to "Delete", song_path(@song), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn form-delete"%>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>

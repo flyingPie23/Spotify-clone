@@ -21,6 +21,28 @@ class SongsController < ApplicationController
     end
   end
 
+  def edit
+    @song = Song.find(params[:id])
+    @user = User.find(@song.user_id)
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
+  end
+
+  def update
+    @song = Song.find(params[:id])
+    @song.update(song_params)
+
+    redirect_to edit_song_path(@song)
+  end
+
+  def destroy
+    @song = Song.find(params[:id])
+    @song.destroy
+
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def song_params
