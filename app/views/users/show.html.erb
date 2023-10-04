@@ -3,12 +3,6 @@
     <div class="container">
       <h1> <%= @user.username %> </h1>
 
-      <%= simple_form_for [@user, @follow]  do |f| %>
-        <%= f.hidden_field :followed_id, value: @user.id %>
-        <%= f.hidden_field :follower_id, value: current_user.id %>
-        <%= f.submit 'Add', class: "follow-btn" %>
-      <% end %>
-
       <div class="footer position-absolute bottom-0 end-0">
         <div class="links">
           <a href="#"><i class="fa-brands fa-instagram"></i></a>

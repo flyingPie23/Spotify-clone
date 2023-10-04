@@ -15,6 +15,8 @@ class PagesController < ApplicationController
 
     @song_new = Song.new
 
+    @top = @songs.sample(1)
+
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
   end

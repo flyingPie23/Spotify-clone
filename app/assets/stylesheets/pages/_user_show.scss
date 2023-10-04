@@ -81,6 +81,22 @@
     }
   }
 
+  .follow{
+    margin-left: 125px;
+
+    .follow-btn{
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      border: 1px white solid;
+      padding: 10px 30px;
+
+      &:hover {
+        background-color: #1DB954;
+      }
+    }
+  }
+
   .grids{
     margin: 75px 0px;
     margin-right: 17px;

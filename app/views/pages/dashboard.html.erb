@@ -2,7 +2,7 @@
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
       <h1>
-        <i class="fa-solid fa-pen-to-square pen" data-bs-toggle="modal" data-bs-target="#user-edit"></i>
+        <i class="fa-solid fa-pen-to-square pen" data-bs-toggle="modal" data-bs-target="#user_edit"></i>
         <%= @user.username %>
       </h1>
     </div>
@@ -21,12 +21,12 @@
       <div class="container create-form">
         <%= simple_form_for @song_new do |f| %>
           <%= f.error_notification %>
-          <%= f.input :title, :label => 'Song Title', required: true%>
-          <%= f.input :cover, :label => 'Cover Art', required: true%>
-          <%= f.input :mp3, :label => 'Song File',required: true, as: :file  %>
-        <div class="form-btn">
-           <%= f.button :submit, value: 'Save', class: "form-submit", type: "button" %>
-        </div>
+          <%= f.input :title, :label => 'Song Title'%>
+          <%= f.input :cover, :label => 'Cover Art'%>
+          <%= f.input :mp3, :label => 'Song File', as: :file  %>
+          <div class="form-btn">
+            <%= f.button :submit, value: 'Save', class: "form-submit"%>
+          </div>
         <% end %>
       </div>
 
@@ -48,10 +48,12 @@
       <div class="center">
         <i class="fa-solid fa-chart-simple"></i>
         <h2>Top Track</h2>
-        <h3> in the past week</h3p>
-        <div class="card-song" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.volvocars.com/images/support/img05d9160a2d5e427dc0a801525d71e1f9_1_--_--_VOICEpnghigh.png)">
-          Song Title
-        </div>
+        <h3> in the past week</h3>
+        <% @top.each do |top| %>
+          <div class="card-song" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= top.cover %>)">
+            <%= top.title %>
+          </div>
+        <% end %>
       </div>
 
       <div class="select">
@@ -124,6 +126,36 @@
               </div>
             </li>
           </ul>
+    </div>
+  </div>
+</div>
+
+<div id="playlist_new">
+  <div class="modal fade" id="user_edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Your Account details</h1>
+        </div>
+          <%= simple_form_for @user do |f| %>
+            <div class="modal-body">
+
+                  <%= f.error_notification %>
+                  <%= f.input :username,
+                              required: true,
+                              autofocus: true,
+                              :placeholder => 'Title of your amazing playlist' %>
+
+                  <%= f.input :pfp,
+                              required: true,
+                              :placeholder => 'a Cover for your amazing playlist'  %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="close-btn" data-bs-dismiss="modal">Close</button>
+              <%= f.button :submit, value: 'Save', class: "save-btn" %>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
