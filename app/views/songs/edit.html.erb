@@ -1,6 +1,6 @@
 <div id="song_edit">
-  <div class = "container">
-    <h2>Release your next big hit:</h2>
+  <div class="container">
+    <h2>Update details of <strong> <%= @song.title %> </strong>:</h2>
     <div class="form">
       <div class="container cover">
         <img src="<%= @song.cover %>" >
@@ -28,6 +28,32 @@
 
       </div>
 
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Analytics:</h2>
+    <div class="analytics">
+      <div class="select">
+        <i class="fa-solid fa-music"></i>
+        <h2>Streams</h2>
+        <h3> <strong> XXX </strong> </h3>
+        <p> <strong> XXX </strong> in the Past Week </p>
+      </div>
+
+      <div class="center">
+        <i class="fa-solid fa-list-ol"></i>
+        <h2>In the Top</h2>
+        <h3> <strong> XXX </strong> </h3>
+        <p> tracks of the month </p>
+      </div>
+
+      <div class="select">
+        <i class="fa-solid fa-play"></i>
+        <h2>Streams</h2>
+        <h3> <strong> XXX </strong> </h3>
+        <p> <strong> XXX </strong> in the Past Week </p>
+      </div>
     </div>
   </div>
 </div>

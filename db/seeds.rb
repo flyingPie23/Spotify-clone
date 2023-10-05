@@ -287,33 +287,68 @@ user4= User.create(
   pfp: "https://i1.sndcdn.com/avatars-pT8UhHAuTGmu6vbV-jWJyoQ-t500x500.jpg",
   password: "123456"
 )
+  local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+  audio_file = ActiveStorage::Blob.create_and_upload!(
+    io: File.open(local_audio_path),
+    filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+    content_type: 'audio/mpeg'
+  )
 
-  Song.create(
-    title: "I / ME / MYSELF",
-    cover: "https://i1.sndcdn.com/artworks-oxN4sL2vLW7Z7H0G-Jrx9lw-t500x500.jpg",
-    user: user4
-  )
-  Song.create(
-    title: "The Main Character",
-    cover: "https://preview.redd.it/e15ar0oaykf91.jpg?auto=webp&s=30a10af55f426825d4827cecfa6ca0b48762bc19",
-    user: user4
-  )
-  Song.create(
-    title: "Your Body, My Temple",
-    cover: "https://i.scdn.co/image/ab67616d0000b2732d4eb49471495b0e22e0120e",
-    user: user4
-  )
-  Song.create(
-    title: "White Noise",
-    cover: "https://cloutcloutclout.com/wp-content/uploads/2022/07/snowy2-1649690441626-scaled.jpg",
-    user: user4
-  )
-  Song.create(
-    title: "Falling Up",
-    cover: "https://images.genius.com/a173ea1c914d9017d5956c6f121b6c7b.374x374x1.png",
-    user: user4
-  )
-    puts "4/12 done"
+      Song.create(
+        title: "Vampire refrence In minor key",
+        cover: "https://assets.bigcartel.com/product_images/349607224/VAMPIREREFERENCEblack.jpg?auto=format&fit=max&w=1200",
+        user: user4,
+        mp3: audio_file
+      )
+    local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+    audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+      content_type: 'audio/mpeg'
+    )
+      Song.create(
+        title: "The Main Character",
+        cover: "https://preview.redd.it/e15ar0oaykf91.jpg?auto=webp&s=30a10af55f426825d4827cecfa6ca0b48762bc19",
+        user: user4,
+        mp3: audio_file
+      )
+    local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+    audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+      content_type: 'audio/mpeg'
+    )
+      Song.create(
+        title: "Your Body, My Temple",
+        cover: "https://i.scdn.co/image/ab67616d0000b2732d4eb49471495b0e22e0120e",
+        user: user4,
+        mp3: audio_file
+      )
+    local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+    audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+      content_type: 'audio/mpeg'
+    )
+      Song.create(
+        title: "White Noise",
+        cover: "https://cloutcloutclout.com/wp-content/uploads/2022/07/snowy2-1649690441626-scaled.jpg",
+        user: user4,
+        mp3: audio_file
+      )
+    local_audio_path = Rails.root.join('app', 'assets', 'audio', 'In The Heights - from the Official Motion Picture Soundtrack (Official Audio).mp3')
+    audio_file = ActiveStorage::Blob.create_and_upload!(
+      io: File.open(local_audio_path),
+      filename: 'In The Heights Motion Picture Soundtrack (Official Audio).mp3',
+      content_type: 'audio/mpeg'
+    )
+      Song.create(
+        title: "Falling Up",
+        cover: "https://images.genius.com/a173ea1c914d9017d5956c6f121b6c7b.374x374x1.png",
+        user: user4,
+        mp3: audio_file
+      )
+puts "4/12 done"
 
 user5 = User.create(
   username: "Bo Burnham",
