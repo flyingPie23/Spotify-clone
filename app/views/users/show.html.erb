@@ -47,38 +47,31 @@
 
         <div class="col grids">
           <h2>Popular Playlists:</h2>
-          <ul>
-            <li>
-              <div class="card-playlist">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Joji_-_Smithereens.png" />
-                <div class="card-playlist-infos">
-                  <h2>SMITHEREENS</h2>
-                </div>
+          <% if @playlists_user.empty? %>
+              <div class="empty-state">
+                <h2> This Artist Hasnt released any Playlits yet </h2>
+
               </div>
-            </li>
+            <% else %>
+              <ul>
+                <% @playlists_user.each do |playlist| %>
+                  <li>
+                    <div class="card-playlist">
+                      <% if playlist.photo.url %>
+                          <img src="<%= playlist.photo.url %>" />
+                        <% else %>
+                          <img src="data:image/png;base64,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" />
+                      <% end %>
+                      <div class="card-playlist-infos">
+                        <h2><%= playlist.name %></h2>
+                      </div>
+                    </div>
+                  </li>
 
-              <hr>
-
-            <li>
-              <div class="card-playlist">
-                <img src="https://i.scdn.co/image/ab67616d0000b2736fbac72609eca05f5d300c9f" />
-                <div class="card-playlist-infos">
-                  <h2>Wake up & its Over</h2>
-                </div>
-              </div>
-            </li>
-
-              <hr>
-
-            <li>
-              <div class="card-playlist">
-                <img src="https://media.mmorpg.com/images/heroes/news/52723.jpg"/>
-                <div class="card-playlist-infos">
-                  <h2>Radical Summer</h2>
-                </div>
-              </div>
-            </li>
-          </ul>
+                  <hr>
+                <% end %>
+              </ul>
+          <% end %>
         </div>
     </div>
 

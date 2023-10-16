@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
+
+    @playlists_user = Playlist.where(user_id: @user).take(3)
   end
 
   def update

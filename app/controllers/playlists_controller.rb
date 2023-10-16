@@ -50,6 +50,28 @@ class PlaylistsController < ApplicationController
 
   end
 
+  def edit
+    @playlist_edit = Playlist.find(params[:id])
+    @user = User.find(@playlist_edit.user_id)
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
+  end
+
+  def update
+    @playlist_edit = Playlist.find(params[:id])
+    @playlist_edit.update(playlist_params)
+
+    redirect_to edit_playlist_path(@playlist_edit)
+  end
+
+  def destroy
+    @playlist_edit = Playlist.find(params[:id])
+    @playlist_edit.destroy
+
+    redirect_to dashboard_path, status: :see_other
+  end
+
 
   private
 

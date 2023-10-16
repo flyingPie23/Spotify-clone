@@ -13,7 +13,8 @@
                   <%= f.input :name,
                               required: true,
                               autofocus: true,
-                              :placeholder => 'Title of your amazing playlist' %>
+                              :placeholder => 'Title of your amazing playlist',
+                              input_html: {maxlength: 40, size: 100} %>
 
                   <%= f.input :photo,
                               required: true,

@@ -4,7 +4,7 @@
       <img src="<%= @song.cover %>">
 
       <h1><%= @song.title %></h1>
-      <p><%= @user.username %></p>
+      <p><%= link_to "#{@user.username}", user_path(@user) %></p>
 
 
 

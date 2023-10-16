@@ -13,8 +13,16 @@
       text-align: center;
       color: white;
       font-size: 37px;
+      a{
+        color: white;
+        text-decoration: none;
+      }&:hover {
+        text-decoration: underline;
+      }
 
     }
+
+
 
     img{
       display: block;
