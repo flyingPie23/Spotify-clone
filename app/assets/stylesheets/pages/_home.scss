@@ -6,13 +6,21 @@
   }
 
   .header{
-    height: 150px;
-    margin: 25px 0px;
+    height: 250px;
+    margin: 45px 0px;
 
     h1{
       font-family: 'Bebas Neue', sans-serif;
       color: white;
       font-size: 90px;
+    }
+
+    p{
+      color: white;
+      font-size: 40px;
+      .green{
+        color: #1DB954;
+      }
     }
 
   }

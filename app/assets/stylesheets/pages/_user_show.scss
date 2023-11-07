@@ -151,6 +151,32 @@
       }
     }
 
+    .empty-state{
+      text-align: center;
+      margin: 50px 0px;
+      font-size: 20px;
+
+      .icon{
+        font-size: 55px;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .side-btn{
+        text-decoration: none;
+        color: white;
+        border: 1px white solid;
+        border-radius: 25px;
+        padding: 5px 20px;
+        &:hover {
+          color:black;
+          background-color: whitesmoke;
+        }
+      }
+
+
+    }
+
 
   }
 

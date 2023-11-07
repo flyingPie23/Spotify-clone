@@ -3,10 +3,11 @@
     <% if user_signed_in? %>
       <div class="header">
         <% if Time.now.hour < 12 %>
-          <h1>Good Morning</h1>
-        <% else %>
-          <h1> Good Afternoon </h1>
+            <h1>Good Morning</h1>
+          <% else %>
+            <h1> Good Afternoon </h1>
         <% end %>
+        <p> Find <strong class="green"> <%= @tracks.size %> </strong> Songs made and released by <strong class="green"> <%= @artists.size %> </strong> Artists worldwide </p>
       </div>
     <% end %>
 
