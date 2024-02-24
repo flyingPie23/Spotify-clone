@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @songs = Song.where(user_id: @user).take(3)
 
+    @follower = Follower.new
+    @followers = Follower.where(follow: @user.id)
+
+    @followed = Follower.where(user_id: current_user.id, follow: @user.id).take(1)
+
 
     @sounds = Song.where(user_id: @user)
 
@@ -21,6 +26,7 @@ class UsersController < ApplicationController
     @playlists = Playlist.where(user_id: current_user)
 
     @playlists_user = Playlist.where(user_id: @user).take(3)
+
   end
 
   def update

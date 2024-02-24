@@ -19,18 +19,6 @@
       opacity: .7;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
-
-    .follow-btn{
-      text-decoration: none;
-      color: white;
-      font-size: 17px;
-      border: 1px white solid;
-      padding: 10px 30px;
-      margin: 0px 15px;
-      &:hover {
-        background-color: #1DB954;
-      }
-    }
     .footer {
       background: transparent;
       display: flex;
@@ -82,7 +70,7 @@
   }
 
   .follow{
-    margin-left: 125px;
+    margin-left: 10px;
 
     .follow-btn{
       text-decoration: none;
@@ -90,10 +78,20 @@
       font-size: 17px;
       border: 1px white solid;
       padding: 10px 30px;
+      background-color: transparent;
 
       &:hover {
         background-color: #1DB954;
       }
+    }
+
+    .followed{
+      text-decoration: none;
+      color: white;
+      font-size: 17px;
+      border: 1px white solid;
+      padding: 10px 30px;
+      background-color: #1DB954;
     }
   }
 

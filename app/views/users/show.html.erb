@@ -2,7 +2,18 @@
   <div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @user.pfp %>);">
     <div class="container">
       <h1> <%= @user.username %> </h1>
+      <div class="follow">
+      <% if @followed.empty? %>
+        <%= simple_form_for [@user, @follower]  do |form| %>
+            <%= form.hidden_field :user_id, value: current_user.id %>
+            <%= form.hidden_field :follow, value: @user.id %>
+            <%= form.submit 'Follow', class: "follow-btn" %>
+        <% end %>
+      <% else %>
+        <a class="followed">Followed</a>
+      <% end %>
 
+    </div>
       <div class="footer position-absolute bottom-0 end-0">
         <div class="links">
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -13,10 +24,10 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container ">
     <div class="info-card">
       <img src="<%= @user.pfp %>">
-      <h2> XXX FOLLOWERS </h2>
+      <h2> <%= @followers.size %> FOLLOWERS </h2>
     </div>
   </div>
 
