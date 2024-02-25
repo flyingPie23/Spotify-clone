@@ -2,17 +2,17 @@
   .body{
     margin: 20px 0px;
     h1{
-      text-align: center;
       font-family: 'Bebas Neue', sans-serif;
       color: white;
       font-size: 90px;
       margin: 5px 0px;
+      margin-top: 120px;
     }
 
     p{
-      text-align: center;
       color: white;
       font-size: 37px;
+      margin-bottom: 100px;
       a{
         color: white;
         text-decoration: none;
@@ -31,7 +31,7 @@
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       height: 450px;
-      width: 750px;
+      width: 500px;
     }
   }
 

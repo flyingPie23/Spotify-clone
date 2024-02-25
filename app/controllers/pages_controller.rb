@@ -22,5 +22,18 @@ class PagesController < ApplicationController
 
     @playlist = Playlist.new
     @playlists = Playlist.where(user_id: current_user)
+
+    @followers = Follower.where(follow: @user.id)
+
+
+    @followers_last_week = period_filter(1.week.ago..Time.now)
+    @followers_last_month = period_filter(1.month.ago..Time.now)
+    @followers_last_year = period_filter(1.year.ago..Time.now)
+  end
+
+  private
+
+  def period_filter(period)
+    Follower.where(follow: @user.id, created_at: period)
   end
 end

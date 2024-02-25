@@ -5,6 +5,12 @@ class FollowersController < ApplicationController
 
     @follow.follow = @user.id
     @follow.user_id = current_user.id
+
+    if @follow.save
+      redirect_to user_path(@user), notice: "you are following: #{@user.username}"
+    else
+      flash[:alert] = 'something wrong happened :('
+    end
   end
 
   def destroy

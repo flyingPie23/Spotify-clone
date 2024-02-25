@@ -1,17 +1,19 @@
 <div id="song_show">
   <div class="container">
-    <div class="body">
-      <img src="<%= @song.cover %>">
+    <div class="body row">
+      <div class="col">
+        <img src="<%= @song.cover %>">
+      </div>
 
-      <h1><%= @song.title %></h1>
-      <p><%= link_to "#{@user.username}", user_path(@user) %></p>
+      <div class="col">
+        <h1><%= @song.title %></h1>
+        <p><%= link_to "#{@user.username}", user_path(@user) %></p>
 
-
-
-      <div class="player">
-        <audio controls controlsList="nodownload">>
-          <source src="<%= @song.mp3.url %>">
-        </audio>
+        <div class="player">
+          <audio controls controlsList="nodownload">>
+            <source src="<%= @song.mp3.url %>">
+          </audio>
+        </div>
       </div>
     </div>
 
