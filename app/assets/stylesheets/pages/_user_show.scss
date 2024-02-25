@@ -85,13 +85,17 @@
       }
     }
 
-    .followed{
+    .unfollow-btn{
       text-decoration: none;
       color: white;
       font-size: 17px;
       border: 1px white solid;
       padding: 10px 30px;
-      background-color: #1DB954;
+      background-color: transparent;
+
+      &:hover {
+        background-color: red;
+      }
     }
   }
 

@@ -10,7 +10,10 @@
             <%= form.submit 'Follow', class: "follow-btn" %>
         <% end %>
       <% else %>
-        <a class="followed">Followed</a>
+        <% @followed.each do |followed| %>
+          <%= link_to "Unfollow", follower_path(followed), data: {turbo_method: :delete}, class: "unfollow-btn" %>
+        <% end %>
+
       <% end %>
 
     </div>

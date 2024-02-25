@@ -16,6 +16,8 @@ class FollowersController < ApplicationController
   def destroy
     @follow = Follower.find(params[:id])
     @follow.destroy
+
+    redirect_to request.referrer, notice: "you are not following this artist anymore"
   end
 
   private
