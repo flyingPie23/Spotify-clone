@@ -135,6 +135,18 @@
                   <%= f.input :pfp,
                               required: true,
                               :placeholder => 'Represent yourself with a great photo !'  %>
+
+              <hr>
+              <h1 class="modal-title fs-5 title" >Socials:</h1>
+
+                  <%= f.input :youtube,
+                              :placeholder => "a link to your youtube channel" %>
+
+                  <%= f.input :twitter,
+                              :placeholder => "a link to your twitter account" %>
+
+                  <%= f.input :instagram,
+                              :placeholder => "a link to your youtube channel" %>
             </div>
             <div class="modal-footer">
               <button type="button" class="close-btn" data-bs-dismiss="modal">Close</button>

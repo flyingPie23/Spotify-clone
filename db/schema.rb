@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_23_230325) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_25_234155) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -86,6 +86,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_23_230325) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "pfp"
+    t.string "twitter"
+    t.string "instagram"
+    t.string "youtube"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -93,7 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_23_230325) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "followers", "users"
-  add_foreign_key "followers", "users", column: "follow"
   add_foreign_key "items", "playlists"
   add_foreign_key "items", "songs"
   add_foreign_key "playlists", "users"
