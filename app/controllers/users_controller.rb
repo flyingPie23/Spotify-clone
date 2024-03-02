@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+
   def index
-    @users = User.all
+    @users = User.where(artist: true)
 
     if params[:query].present?
       @users = @users.where("username ILIKE ?", "%#{params[:query]}%")

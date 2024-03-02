@@ -2,10 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @users = User.all.sample(3)
+    @users = User.where(artist: true).sample(3)
     @songs = Song.all.sample(6)
 
-    @artists = User.all
+    @artists = User.where(artist: true)
     @tracks = Song.all
 
     @playlist = Playlist.new

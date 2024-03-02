@@ -126,11 +126,12 @@
           <%= simple_form_for @user do |f| %>
             <div class="modal-body">
 
-                  <%= f.error_notification %>
-                  <%= f.input :username,
-                              required: true,
-                              autofocus: true,
-                              :placeholder => 'Pick a attention grabing photo' %>
+                <%= f.error_notification %>
+                <%= f.input :username,
+                      required: true,
+                      hint: ("this will be displayed on your profile"),
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
 
                   <%= f.input :pfp,
                               required: true,

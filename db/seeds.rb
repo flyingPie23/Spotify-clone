@@ -8,8 +8,10 @@
 require "open-uri"
 
 puts "clears database"
-User.destroy_all
+Playlist.destroy_all
+Follower.destroy_all
 Song.destroy_all
+User.destroy_all
 
 puts "adding users and their songs"
 
@@ -103,7 +105,7 @@ user1 = User.create(
       mp3: audio_file
     )
 
-      puts "1/12 done"
+      puts "#{User.count}/11 done"
 
 user2 = User.create(
   username: "James Marriott",
@@ -197,7 +199,7 @@ user2 = User.create(
         mp3: audio_file
       )
 
-      puts "2/12 done"
+      puts "#{User.count}/11 done"
 
 
 user3 = User.create(
@@ -279,7 +281,7 @@ user3 = User.create(
       user: user3,
       mp3: audio_file
   )
-    puts "3/12 done"
+    puts "#{User.count}/11 done"
 
 user4= User.create(
   username: "Will Wood",
@@ -348,7 +350,7 @@ user4= User.create(
         user: user4,
         mp3: audio_file
       )
-puts "4/12 done"
+puts "#{User.count}/11 done"
 
 user5 = User.create(
   username: "Bo Burnham",
@@ -386,46 +388,7 @@ user5 = User.create(
     cover: "https://i.pinimg.com/originals/3d/f9/a5/3df9a542dd4f1d167c097232ec396073.jpg",
     user: user5
   )
-    puts "5/12 done"
-
-
-user6 = User.create(
-  username: "loveJoy",
-  email: "olivia.anderson@mail.com",
-  pfp: "https://backend.alterart.pl/media/CACHE/images/images/2022/10-21/lovejoy_slider/0c72eb697ec5b5c2c9473501a72be32c.jpg",
-  password: "123456"
-)
-  Song.create(
-    title: "Portrait of a Blank Slate",
-    cover: "https://i.ytimg.com/vi/yzGQc6sFHkg/maxresdefault.jpg",
-    user: user6
-  )
-  Song.create(
-    title: "Call Me What You Like",
-    cover: "https://shlyrics.com/wp-content/uploads/2023/02/Call-Me-What-You-Like-Lyrics-Lovejoy.jpg",
-    user: user6
-  )
-  Song.create(
-    title: "One Day",
-    cover: "https://i.ytimg.com/vi/WXqbR-h5VMY/mqdefault.jpg",
-    user: user6
-  )
-  Song.create(
-    title: "Sex Sells",
-    cover: "https://images.genius.com/6782638990eef34319c738b394d480d6.1000x1000x1.png",
-    user: user6
-  )
-  Song.create(
-    title: "Knee Deep In ATP",
-    cover: "https://i.scdn.co/image/ab67616d0000b273b14662d2473a7b62edc15935",
-    user: user6
-  )
-  Song.create(
-    title: "Privately Owned Spiral Galaxy",
-    cover: "https://images.genius.com/4119e127c7b8711d9db61b73b4c1e98c.1000x1000x1.jpg",
-    user: user6
-  )
-    puts "6/12 done"
+    puts "#{User.count}/11 done"
 
 user7 = User.create(
   username: "Queen",
@@ -463,7 +426,7 @@ user7 = User.create(
     cover: "https://upload.wikimedia.org/wikipedia/en/f/f0/Killer_Queen_%28cover_art%29.jpg",
     user: user7
   )
-    puts "7/12 done"
+    puts "#{User.count}/11 done"
 
 
 user8 = User.create(
@@ -502,7 +465,7 @@ user8 = User.create(
     cover: "https://images.genius.com/bf5132b520fa257368b0112d276d6748.1000x1000x1.png",
     user: user8
   )
-    puts "8/12 done"
+    puts "#{User.count}/11 done"
 
 user9 = User.create(
   username: "Max Wassen",
@@ -540,7 +503,7 @@ user9 = User.create(
     cover: "https://i.scdn.co/image/ab67616d0000b2736a759a85a94bbf163179c326",
     user: user9
   )
-    puts "9/12 done"
+    puts "#{User.count}/11 done"
 
 
 user10 = User.create(
@@ -579,7 +542,7 @@ user10 = User.create(
     cover: "https://images.genius.com/acb26489b3d523eed464b0520f2f0e7a.1000x1000x1.png",
     user: user10
   )
-    puts "10/12 done"
+    puts "1#{User.count}/11 done"
 
 user11 = User.create(
   username: "The Weeknd",
@@ -617,7 +580,7 @@ user11 = User.create(
     cover: "https://www.nme.com/wp-content/uploads/2021/08/weeknd-take-my-breath-music-video@2000x1270.jpg",
     user: user11
   )
-    puts "11/12 done"
+    puts "1#{User.count}/11 done"
 
 
 user12 = User.create(
@@ -656,7 +619,17 @@ user12 = User.create(
     cover: "https://www.lisani.jp/admin/wp-content/uploads/2022/09/2209251800-yh-005-1000x630.jpg",
     user: user12
   )
-   puts "12/12 done"
+   puts "1#{User.count}/11 done"
+
+puts "updating status of users"
+users = User.all
+
+users.each do |user|
+  user.artist = Song.exists?(user_id: user.id)
+  user.save
+end
+
+puts "#{User.where(artist: true).count} artists out of #{User.count} users"
 
 
 puts "seed done"

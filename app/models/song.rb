@@ -4,5 +4,4 @@ class Song < ApplicationRecord
 
   validates :cover, presence: true
   validates :title, presence: true
-  validates :mp3, presence: true
 end
