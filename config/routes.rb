@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :followers, only: [:destroy]
 
   get "dashboard", to: "pages#dashboard", as: "dashboard"
+  get "feed", to: "pages#feed", as: "feed"
 
   resources :songs
 

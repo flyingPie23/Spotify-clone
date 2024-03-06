@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
     @followed = Follower.where(user_id: current_user.id, follow: @user.id).take(1)
 
-
     @sounds = Song.where(user_id: @user)
 
     @playlist = Playlist.new
@@ -42,5 +41,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :pfp)
   end
-
 end

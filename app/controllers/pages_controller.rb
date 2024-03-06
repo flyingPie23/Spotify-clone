@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
     @users = User.where(artist: true).sample(3)
@@ -31,9 +31,33 @@ class PagesController < ApplicationController
     @followers_last_year = period_filter(1.year.ago..Time.now)
   end
 
+  def feed
+    @feed = sort_feed
+
+    @playlist = Playlist.new
+    @playlists = Playlist.where(user_id: current_user)
+
+  end
+
   private
 
   def period_filter(period)
     Follower.where(follow: @user.id, created_at: period)
+  end
+
+  def sort_feed
+    feed = []
+
+    Follower.where(user_id: current_user.id).each do |f|
+      Song.where(user_id: f.follow).each do |s|
+        feed << s
+      end
+
+      Playlist.where(user_id: f.follow).each do |p|
+        feed << p
+      end
+    end
+
+    return feed.sort_by(&:created_at).reverse
   end
 end

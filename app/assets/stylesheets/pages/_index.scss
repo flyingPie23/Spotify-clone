@@ -8,9 +8,11 @@
 @import "playlists";
 @import "dashboard";
 @import "edit";
+@import "feed";
 
 body{
-  background-color: #121212;
+  background: rgb(1,1,1);
+  background: linear-gradient(180deg, rgba(1,1,1,1) 0%, rgba(18,18,18,1) 50%);
 }
 body::-webkit-scrollbar {
   width: 12px;
