@@ -8,28 +8,38 @@
     <div class="body">
 
       <% @feed.each do |item| %>
-        <%= link_to song_path(item) do %>
           <% if item.class == Song %>
-            <div class="post-card">
-                  <img src="<%= item.cover %>">
-                  <div class="post-info">
-                    <h3><%= item.title %></h3>
-                    <%= link_to item.user.username, user_path(item.user) %>
-                    <p>Single, <%= time_ago_in_words(item.created_at) %> ago.</p>
-                  </div>
-            </div>
-          <% else %>
-            <div class="post-card">
-                  <img src="<%= item.photo.url %>">
-                  <div class="post-info">
-                    <h3><%= item.name %></h3>
-                    <%= link_to item.user.username? ? item.user.username : "user" , user_path(item.user) %>
-                    <p>Playlist, <%= time_ago_in_words(item.created_at) %> ago.</p>
-                  </div>
-            </div>
-          <% end %>
-        <% end %>
+            <%= link_to song_path(item) do%>
+              <div class="post-card">
+                <img src="<%= item.cover %>">
 
+                <div class="post-info">
+                  <h3><%= item.title %></h3>
+                  <%= link_to item.user.username, user_path(item.user) %>
+                  <p>Single, <%= time_ago_in_words(item.created_at) %> ago.</p>
+                </div>
+
+                <hr>
+              </div>
+            <% end %>
+
+            <hr>
+          <% else %>
+            <%= link_to playlist_path(item) do %>
+              <div class="post-card">
+                <img src="<%= item.photo.url %>">
+
+                <div class="post-info">
+                  <h3><%= item.name %></h3>
+                  <%= link_to item.user.username? ? item.user.username : "user" , user_path(item.user) %>
+                  <p>Playlist, <%= time_ago_in_words(item.created_at) %> ago.</p>
+                </div>
+              </div>
+
+            <% end %>
+
+            <hr>
+          <% end %>
       <% end %>
 
     </div>

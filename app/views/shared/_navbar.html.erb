@@ -23,10 +23,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <%= link_to "Feed", feed_path, class: "nav-link navbar-btn" %>
-        </li>
         <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Feed", feed_path, class: "nav-link navbar-btn" %>
+          </li>
           <li class="nav-item dropdown">
             <% if current_user.pfp %>
               <%= image_tag "#{current_user.pfp}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
