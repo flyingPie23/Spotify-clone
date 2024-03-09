@@ -13,6 +13,7 @@
         <li class="nav-item">
           <%= link_to "Playlists", playlists_path, class: "nav-link navbar-btn" %>
         </li>
+
       </ul>
     <% end %>
 
@@ -22,10 +23,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Feed", feed_path, class: "nav-link navbar-btn" %>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <% if current_user.pfp %>
-              <%= image_tag "#{current_user.pfp}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "#{current_user.pfp}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
             <% else %>
               <%= image_tag "https://i.scdn.co/image/ab6761610000e5eb58efbed422ab46484466822b", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>

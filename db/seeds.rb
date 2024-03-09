@@ -70,11 +70,12 @@ user1 = User.create(
     content_type: 'audio/mpeg'
   )
 
+
     Song.create(
       title: "Sanctuary",
       cover: "https://upload.wikimedia.org/wikipedia/en/2/2e/Joji_-_Sanctuary.png",
       user: user1,
-      mp3: audio_file
+      mp3: audio_file,
     )
 
   local_audio_path = Rails.root.join('app', 'assets', 'audio', 'Joji - Feeling Like The End.mp3')

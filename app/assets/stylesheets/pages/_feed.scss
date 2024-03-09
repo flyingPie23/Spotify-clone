@@ -1,5 +1,4 @@
 #feed{
-
   .header{
     margin: 45px 0px;
     h1{
@@ -12,5 +11,56 @@
       color: white;
       font-size: 25px;
     }
+  }
+
+  .body{
+    .post-card{
+
+      display: flex;
+      margin-bottom: 55px;
+      margin-right: 550px;
+
+
+
+      img{
+        width: 200px;
+        height: 200px;
+
+        background-size: cover;
+        background-position: center;
+      }
+
+      .post-info{
+        margin-left: 20px;
+        margin-top: 50px;
+        justify-content: end;
+
+        h3{
+          font-family: 'Bebas Neue', sans-serif;
+          color: white;
+          font-size: 30px;
+        }
+
+        p{
+          color: white;
+          font-size: 15px;
+        }
+
+        a{
+          color: white;
+          font-size: 15px;
+          text-decoration: none;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
+      }
+
+    }:hover{
+      background-color: #444242;
+    }
+
   }
 }
