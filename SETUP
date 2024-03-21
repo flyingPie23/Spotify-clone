@@ -1,0 +1,11 @@
+after Cloning this project to be able to use it run this command
+
+yarn add bootstrap
+yarn build --watch
+
+touch .env
+echo '.env*' >> .gitignore
+
+(provide the .env file with a cloudinary api key)
+
+rails db:create db:migrate db:seed
